@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business & Finance Manager — Candidate Report | Headway</title>
+<style>
+  :root{
+    --darkteal:#0F2D35;
+    --teal:#3F9588;
+    --mint:#E3F6F4;
+    --paleGreen:#D9F4E3;
+    --paleAmber:#FFF2CF;
+    --paleRed:#FBDCE1;
+    --textGreen:#1E7B34;
+    --textAmber:#8A6D1D;
+    --textRed:#B3261E;
+    --greyRow:#F7F7F7;
+    --ink:#1C2B2E;
+    --muted:#5B6E70;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0;
+    font-family:Calibri, "Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+    background:#FAFAF9;
+    line-height:1.55;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px 80px;}
+  header.hero{background:var(--darkteal); color:#fff; padding:44px 24px 32px;}
+  header.hero .wrap{padding:0;}
+  nav{display:flex; gap:18px; flex-wrap:wrap; margin-top:18px;}
+  nav a{color:#CFE9E4; text-decoration:none; font-size:13px; border-bottom:1px solid transparent;}
+  nav a:hover{border-color:var(--teal);}
+  .eyebrow{text-transform:uppercase; letter-spacing:.12em; font-size:12px; color:var(--teal); font-weight:700; margin-bottom:10px;}
+  h1{font-family:Cambria, Georgia, serif; font-size:30px; margin:0 0 6px; font-weight:700; line-height:1.2;}
+  .role-line{font-size:15px; color:#CFE9E4;}
+  section{padding:36px 0; border-bottom:1px solid #E7E3DC;}
+  section:last-of-type{border-bottom:none;}
+  h2{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:21px; margin:0 0 16px;}
+  h3{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:17px; margin:20px 0 8px;}
+  .card{background:#fff; border:1px solid #E7E3DC; border-radius:10px; padding:20px 22px; margin-bottom:14px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:10px 0;}
+  th, td{text-align:left; padding:8px 10px; border-bottom:1px solid #E7E3DC; vertical-align:top;}
+  th{background:var(--darkteal); color:#fff; font-weight:600; font-size:12.5px;}
+  tr:nth-child(even) td{background:var(--greyRow);}
+  .rag-green{color:var(--textGreen); font-weight:700;}
+  .rag-amber{color:var(--textAmber); font-weight:700;}
+  .rag-red{color:var(--textRed); font-weight:700;}
+  .total-row td{font-weight:700; background:var(--mint) !important; border-top:2px solid var(--teal);}
+  .verdict-box{background:var(--darkteal); color:#fff; border-radius:10px; padding:22px 24px; margin:16px 0;}
+  .verdict-box .score{font-family:Cambria, Georgia, serif; font-size:24px; color:#fff; margin-bottom:8px;}
+  .verdict-box p{color:#DCEDE9; margin:8px 0 0;}
+  .flags-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;}
+  @media (max-width:640px){.flags-grid{grid-template-columns:1fr;}}
+  .flag-box{border-radius:10px; padding:16px 18px; font-size:13.5px;}
+  .flag-box.red{background:var(--paleRed); border-left:4px solid var(--textRed);}
+  .flag-box.green{background:var(--paleGreen); border-left:4px solid var(--textGreen);}
+  .flag-box h4{margin:0 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:.03em;}
+  .flag-box.red h4{color:var(--textRed);}
+  .flag-box.green h4{color:var(--textGreen);}
+  .flag-box ul{margin:0; padding-left:18px;}
+  .flag-box li{margin-bottom:8px;}
+  details{background:#fff; border:1px solid #E7E3DC; border-radius:10px; margin-bottom:14px; overflow:hidden;}
+  summary{cursor:pointer; padding:14px 20px; font-family:Cambria, Georgia, serif; font-size:16px; color:var(--darkteal); font-weight:700; background:var(--mint); list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; font-size:20px; color:var(--teal);}
+  details[open] summary::after{content:"–";}
+  .doc-body{padding:18px 22px; font-size:13.5px; white-space:pre-wrap; font-family:Calibri, Arial, sans-serif; color:var(--ink);}
+  .doc-body strong{color:var(--darkteal);}
+  .note-box{background:var(--mint); border-radius:8px; padding:14px 16px; font-size:13.5px; color:var(--darkteal); margin-bottom:16px;}
+  .profile-header{background:var(--mint); border-radius:10px; padding:20px 22px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  .profile-header h3{margin:0 0 4px; font-size:20px;}
+  .profile-header .meta{color:var(--muted); font-size:13px;}
+  .score-pill{background:var(--darkteal); color:#fff; border-radius:10px; padding:10px 18px; text-align:center; min-width:100px;}
+  .score-pill .num{font-family:Cambria, Georgia, serif; font-size:26px; font-weight:700;}
+  .score-pill .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#CFE9E4;}
+  .footer-note{text-align:center; color:var(--muted); font-size:12px; padding:30px 0 0;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Raise + Recruit · Candidate Report</div>
+    <h1>Business &amp; Finance Manager</h1>
+    <div class="role-line">Headway Cardiff and South East Wales · Final interview confirmed: 2:00pm, Monday 17 August 2026</div>
+    <nav>
+      <a href="#framework">Assessment Framework</a>
+      <a href="#candidate">Candidate — Emma Hickey</a>
+      <a href="#cv">CV &amp; Cover Letter</a>
+      <a href="#exploration">Interview Guidance</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="note-box">
+      This report covers Emma Hickey, who has now completed the full recruitment process — CV review, first interview and structured competency interview — and is confirmed for final interview with you and Lisa on <strong>Monday 17 August at 2:00pm</strong>. Her CV, cover letter and full scorecard are included below.
+    </div>
+  </section>
+
+  <section id="framework">
+    <h2>Assessment Framework &amp; Important Notes</h2>
+    <div class="card">
+      <h3>Please read before reviewing scores</h3>
+      <p>The assessment, scores and commentary in this report represent my interpretation of Emma's performance across CV review, first interview and structured competency interview. It is not a definitive assessment of her capability or potential.</p>
+      <p>Scores are based on specific evidence gathered through the process — her written application, her responses to the questions asked at first interview, and her responses to the structured competency questions. She may perform differently in person, under different conditions, or when responding to your own questions framed in a way that suits her communication style.</p>
+      <p>This report is intended as a guide to inform your own assessment at interview — not as a final verdict. The scores and commentary should prompt lines of enquiry, not close them down. The final assessment and hiring decision rests entirely with you and Lisa.</p>
+      <h3>How scores are calculated</h3>
+      <p>Emma is assessed across the ten dimensions of the agreed scoring framework, each weighted according to the priorities you set out. A score out of 10 is given per dimension, multiplied by the weighting to produce a weighted score. The total is out of 100. Where a dimension was tested at both first and competency interview, the final score is a straight average of the two.</p>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>What it measures</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>Day-to-day ownership of payroll, accounts and financial controls</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>Building a budget from scratch, annual accounts and funder-facing reporting</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>Managing and procuring IT, accountancy and office systems</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>HR processes, staff administration and day-to-day people management</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>Noticing and actioning risk, fire evacuation knowledge — a live, daily part of the role</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>DPO responsibilities and GDPR compliance</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>Ability to make sound calls independently and cover senior absence</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>Speed and confidence picking up new systems and processes</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>Practical, people-focused evidence of values in action</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>On-site availability, commute and commitment</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="candidate">
+    <h2>Emma Hickey</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Emma Hickey</h3>
+        <div class="meta">Finance Manager, Providing Opportunities &amp; Support (PROPS) · March 2021 – Present · Based in Fishponds, Bristol</div>
+      </div>
+      <div class="score-pill">
+        <div class="num">72.5</div>
+        <div class="lbl">/ 100</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Combined Scoring — First Interview + Competency Interview</h3>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>1st Intw</th><th>Comp.</th><th>Final</th><th>RAG</th><th>Weighted</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>8</td><td>8</td><td>8.0</td><td class="rag-green">GREEN</td><td>20.00</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>6</td><td>5.5</td><td>5.75</td><td class="rag-amber">AMBER</td><td>5.75</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>TBC</td><td>6</td><td>6.0</td><td class="rag-amber">AMBER</td><td>6.00</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>6.5</td><td>7</td><td>6.75</td><td class="rag-amber">AMBER</td><td>6.75</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>4.5</td><td>5</td><td>4.75</td><td class="rag-red">RED</td><td>2.38</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>4.5</td><td>6</td><td>5.25</td><td class="rag-amber">AMBER</td><td>1.57</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>8.5</td><td>9</td><td>8.75</td><td class="rag-green">GREEN</td><td>7.88</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>7.5</td><td>7.5</td><td>7.5</td><td class="rag-green">GREEN</td><td>11.25</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>9</td><td>9</td><td>9.0</td><td class="rag-green">GREEN</td><td>6.30</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>8</td><td>7.5</td><td>7.75</td><td class="rag-green">GREEN</td><td>4.65</td></tr>
+        <tr class="total-row"><td colspan="6">TOTAL WEIGHTED SCORE</td><td>72.5 / 100</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Assessment Summary</h3>
+      <p>Her profile is defined by two genuinely exceptional data points sitting alongside a deep, fully-verified financial competence. Her financial control and payroll evidence is the clearest, most consistent strength in the assessment — a colour-coded payroll tracking system, weekly check-ins, and two years of solo audit ownership, confirmed in detail under direct competency questioning. She volunteered, unprompted, that she checks her own work against the payroll company's return: "I'm not just a double checker, I'm a triple checker."</p>
+      <p>Her autonomy evidence is the standout of the whole assessment. Beyond stepping up as the most senior member of staff when PROPS lost both its CEO and Head of Operations, she disclosed at competency interview that she personally raised suspicions of fraud to the trustees — a high-stakes, courageous, correctly-judged decision that triggered a formal investigation, the CEO's departure, and a police case that remains ongoing. Her values evidence is concrete and repeated rather than one-off: she is one of only two staff who support trainees on PROPS' annual long-distance cycle ride (up at 5am to drive a minibus and lead the shorter route), and she organises an annual charity rugby match with her son.</p>
+      <p>The gaps that remain — health &amp; safety, annual budget preparation, and IT/systems contract experience — are honestly disclosed and now genuinely tested rather than simply absent from evidence. On each, she reasoned through a sound general approach but was candid that she has no direct hands-on experience, which is consistent with someone who has operated in a smaller finance-only remit than the fuller office-management brief this role requires.</p>
+      <p>On practical fit, directly asked how many days she could commit to being on site, she gave a clear, considered answer: three days as an absolute regular maximum because of the commute, with flexibility for more during onboarding or short-term cover — matching the role's stated three-day minimum exactly.</p>
+    </div>
+
+    <div class="verdict-box">
+      <div class="score">Combined Score: 72.5 / 100</div>
+      <p>Worth resolving three small practical points she raised at competency stage before an offer stage: office parking availability, whether the three-day office requirement has flexibility once she's settled in, and her current annual leave entitlement (30 days, against the role's 22 rising to 29 after five years). None are deal-breakers on her side, but worth a clear answer.</p>
+    </div>
+
+    <div class="flags-grid">
+      <div class="flag-box red">
+        <h4>Red flags</h4>
+        <ul>
+          <li>Health &amp; safety remains the weakest dimension across both interviews — sound general knowledge, but speculative on fire evacuation specifically, with no hands-on experience.</li>
+          <li>No practical experience preparing an annual budget or negotiating an IT/systems contract — both confirmed as genuine gaps rather than absence of evidence.</li>
+          <li>No experience running payroll on an accounting/payroll platform directly — PROPS' payroll runs through an external provider.</li>
+          <li>Practical points raised at competency stage (parking, day-flexibility, annual leave) worth resolving before offer.</li>
+        </ul>
+      </div>
+      <div class="flag-box green">
+        <h4>Green flags</h4>
+        <ul>
+          <li>Two independent, high-stakes autonomy examples on record — stepping up through a leadership gap, and personally raising fraud concerns to the trustees.</li>
+          <li>Financial control and payroll evidence is detailed, systematic and fully confirmed under direct questioning — the clearest strength in the profile.</li>
+          <li>Values evidence is concrete and repeated, not a one-off — sustained personal volunteering beyond her job description.</li>
+          <li>Consistently honest under pressure, including correcting the interviewer's own assumptions rather than embellishing.</li>
+          <li>Her on-site commitment (three days, clearly reasoned) matches the role's stated minimum exactly.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV &amp; Cover Letter</h2>
+
+    <details open>
+      <summary>Curriculum Vitae — Emma Hickey</summary>
+      <div class="doc-body"><strong>Emma Hickey — Finance &amp; Office Manager</strong>
+Bristol, UK · 0774 066 3159 · emmarhickey@outlook.com
+
+<strong>Professional Profile</strong>
+Highly organised and reliable Finance and Office Manager with extensive experience overseeing finance, payroll, HR, and administration functions within the charity and public sectors. Known for excellent attention to detail, strong problem-solving skills, and the ability to manage complex workloads to tight deadlines. A confident communicator with proven leadership capability and a collaborative approach to work.
+
+<strong>Key Skills</strong>
+Financial management &amp; reporting · Payroll administration &amp; HR processes · Sage &amp; QuickBooks accounting &amp; bank reconciliation · VAT returns &amp; Gift Aid submissions · Audit preparation &amp; liaison · Policy and procedure development · Excel, Word, Outlook &amp; IT systems · Workload and deadline management · Leadership &amp; team support · Excellent written and verbal communication
+
+<strong>Professional Experience</strong>
+
+Finance Manager — Providing Opportunities &amp; Support (PROPS) · March 2021 – Present
+— Full responsibility for the entire finance function of the charity
+— Managing monthly payroll, including timesheets, sick leave, unpaid leave and salary changes, liaising with external payroll providers
+— Leading HR processes including onboarding, offboarding, contract letters, salary change letters and holiday entitlement calculations
+— Maintaining electronic HR records and staff access controls
+— Managing accounts on Sage and QuickBooks, including bank reconciliations, income and expenditure tracking
+— Preparing and submitting VAT returns and Gift Aid claims
+— Lead contact for external bookkeepers and auditors, successfully leading annual audits
+— Overseeing petty cash, staff expenses and enterprise finances
+— Managing income processes, invoicing and debt recovery for local authorities and families
+— Developing, reviewing and implementing finance policies and procedures
+— Providing management cover across the organisation when required
+
+Office Manager — Providing Opportunities &amp; Support (PROPS) · October 2017 – March 2021
+— Managed office operations, administration and financial processes
+— Supported senior management with reporting and compliance
+— Supervised staff and coordinated workloads across teams
+— Payroll, accounting duties and assisting with the annual audit
+
+Administrator — PROPS · November 2013 – October 2017
+— Set up and formalised the organisation's complete administration function
+— Created service user records and staff files
+— Established filing systems, preferred suppliers and invoicing processes
+— Acted as first point of contact for enquiries and operational support
+— Payroll and accounting duties
+
+Campus Administrator — UWE Students' Union, Glenside Campus · November 2013 – July 2014
+— First point of contact for students and visitors
+— Promoted Students' Union activities and services
+— Provided administrative and event support
+
+Referrals Co-ordinator — Avon and Wiltshire Mental Health Partnership NHS Trust · November 2012 – November 2013
+— Processed and logged referrals from healthcare professionals
+— Maintained accurate electronic records in trust databases
+— Coordinated assessment appointments within required timescales
+— Managed correspondence with service users, GPs and referrers
+— Provided reception cover and handled sensitive enquiries
+
+Information Officer — Audit Commission · January 2007 – July 2011
+— Provided research and information services to staff
+— Managed intranet content and digital resources
+— Coordinated archiving and records management
+— Organised annual staff events for up to 220 attendees
+— Processed orders and reconciled invoices prior to finance submission
+— Local representative for flexible working queries
+
+Publications Officer — Audit Commission · August 1992 – January 2007
+— Processed publication orders via telephone, email and post
+— Responded to internal and external enquiries
+— Maintained accurate publication and order records
+
+Earlier Career — Manpower (Temporary Assignments), Solartint Ltd, Provincial Insurance Company · 1990 – 1992
+Administrative, data input, order processing, customer service, scheduling and reception duties.
+
+<strong>Education &amp; Qualifications</strong>
+AAT Level 3 – Part Qualified · City &amp; Guilds – Library and Information Assistants Certificate · RSA Diploma in Office Procedures · RSA Stage 1 &amp; 2 – Numeracy, English Language, Communication in Business, Word Processing &amp; Typewriting
+
+<strong>Additional Information</strong>
+Founder and Chair of a local netball club (established 3 years ago) · Committee member for County Netball League (2 roles) · Qualified netball coach and umpire
+
+<strong>Interests</strong>
+Netball (playing, umpiring and coaching), reading, cycling and walking
+
+<strong>References</strong>
+Available on request</div>
+    </details>
+
+    <details>
+      <summary>Cover Letter — Emma Hickey</summary>
+      <div class="doc-body">Dear Hiring Manager,
+
+I am writing to apply for the Business &amp; Finance Manager role at Headway. As a highly organised and reliable finance and office manager with extensive charity-sector experience, I offer a strong combination of financial management, operational oversight, HR administration, compliance awareness and practical team support.
+
+In my current role at Props, I hold responsibility for the finance function and day-to-day office operations. This includes managing accounts using Sage and QuickBooks, preparing VAT returns, supporting annual audit processes, maintaining accurate records, processing payments, reconciling accounts, submitting Gift Aid claims and ensuring that financial procedures are followed consistently. I am confident working with budgets, deadlines and grant monitoring, and I understand the importance of accuracy, confidentiality and strong internal controls in a values-led organisation.
+
+Alongside finance, I bring broad experience across HR, administration and organisational support. I manage monthly payroll, recruitment (onboarding and offboarding), maintain electronic HR records, prepare contract and salary-change letters, and help ensure policies, procedures and records remain up to date. I am used to balancing competing priorities, responding calmly to urgent tasks and supporting colleagues, managers, trustees and external contacts with professionalism and care.
+
+A significant example of my leadership and resilience came during a difficult period for Props just over two years ago, when both the Head of Operations and CEO left their roles. During this time, I became the most senior member of staff and, with the support of the Trustees, helped keep the organisation running. This required me to make decisions beyond the usual scope of my role, maintain stability across the team and handle sensitive organisational matters with complete confidentiality until an interim CEO was appointed. I am proud that Props has continued to grow since then, both in staff numbers and service user numbers, and I believe this experience demonstrates my ability to remain calm, responsible and solutions-focused during periods of change.
+
+I am particularly drawn to Headway because of its commitment to improving life after brain injury. I would welcome the opportunity to contribute to that mission by providing dependable financial management, efficient business support and a positive, well-organised working environment. My charity-sector background has given me a practical understanding of the need to make best use of resources while maintaining high standards of governance, reporting and service support.
+
+I also bring strong communication and IT skills, including confident use of Microsoft Office, digital records and ensuring VFM was obtained through regular contract reviews with suppliers. I enjoy improving processes, creating clear systems and helping teams work effectively. Colleagues know me as approachable, organised and dependable, with the ability to work independently while remaining collaborative and responsive to organisational needs.
+
+I would be delighted to bring my finance, HR and operational experience to Headway and support the effective running of your organisation. Thank you for considering my application. I would welcome the opportunity to discuss how my skills and experience align with the needs of the Business &amp; Finance Manager role.
+
+Yours sincerely,
+Emma Hickey</div>
+    </details>
+  </section>
+
+  <section id="exploration">
+    <h2>Interview Guidance — Areas for Exploration</h2>
+    <div class="card">
+      <p>Suggested areas worth exploring with Emma at final interview, based on the assessment conducted through the process so far. These are intended as prompts, not prescriptions — Emma may address some of these proactively, or respond in ways that alter the picture. The assessment is yours to make.</p>
+      <table>
+        <tr><th style="width:20%;">Area</th><th style="width:40%;">Suggested to explore</th><th style="width:40%;">What to listen for</th></tr>
+        <tr>
+          <td><strong>Health &amp; safety</strong></td>
+          <td>Her honest lack of hands-on H&amp;S/fire-evacuation experience — worth probing how she'd get up to speed fast on a physical building with a day centre.</td>
+          <td>A practical, proactive plan rather than more speculation — willingness to own it quickly rather than downplay the gap.</td>
+        </tr>
+        <tr>
+          <td><strong>Budget preparation</strong></td>
+          <td>She has never built an annual budget from scratch. Worth walking through how she'd approach year one, and what support she'd want from you.</td>
+          <td>Sound structured thinking and self-awareness about the learning curve — she reasoned through this correctly at competency stage without direct experience.</td>
+        </tr>
+        <tr>
+          <td><strong>IT &amp; systems procurement</strong></td>
+          <td>No direct experience negotiating an IT or accountancy systems contract — worth a concrete scenario specific to Headway's own systems.</td>
+          <td>Genuine business judgement versus a generic textbook answer.</td>
+        </tr>
+        <tr>
+          <td><strong>Practical logistics</strong></td>
+          <td>She raised office parking, day-flexibility over time, and her current 30-day annual leave (against the role's 22, rising to 29) at competency stage. Worth resolving these directly with her.</td>
+          <td>None are flagged as a fit concern on her side — these are practical points to close out rather than areas of doubt.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="footer-note">Raise + Recruit · raiseandrecruit.org.uk · john@raiseandrecruit.org.uk</div>
+
+</div>
+</body>
+</html>
