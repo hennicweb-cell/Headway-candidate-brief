@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interview Preparation — Emma Hickey</title>
+<style>
+  :root{
+    --darkteal:#0F2D35;
+    --teal:#3F9588;
+    --mint:#E3F6F4;
+    --paleGreen:#D9F4E3;
+    --paleAmber:#FFF2CF;
+    --paleRed:#FBDCE1;
+    --textGreen:#1E7B34;
+    --textAmber:#8A6D1D;
+    --textRed:#B3261E;
+    --greyRow:#F7F7F7;
+    --ink:#1C2B2E;
+    --muted:#5B6E70;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0;
+    font-family:Calibri, "Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+    background:#FAFAF9;
+    line-height:1.55;
+  }
+  .wrap{max-width:860px; margin:0 auto; padding:0 24px 80px;}
+  header.hero{
+    background:var(--darkteal);
+    color:#fff;
+    padding:48px 24px 36px;
+  }
+  header.hero .wrap{padding:0;}
+  .eyebrow{
+    text-transform:uppercase; letter-spacing:.12em; font-size:12px;
+    color:var(--teal); font-weight:700; margin-bottom:10px;
+  }
+  h1{
+    font-family:Cambria, Georgia, serif;
+    font-size:32px; margin:0 0 6px; font-weight:700; line-height:1.2;
+  }
+  .role-line{font-size:16px; color:#CFE9E4; margin-bottom:18px;}
+  .links{display:flex; gap:10px; flex-wrap:wrap;}
+  .links a{
+    color:#fff; text-decoration:none; font-size:13px;
+    background:rgba(255,255,255,0.12);
+    border:1px solid rgba(255,255,255,0.35);
+    padding:7px 14px; border-radius:20px;
+  }
+  .links a:hover{background:rgba(255,255,255,0.22);}
+  section{padding:38px 0; border-bottom:1px solid #E7E3DC;}
+  section:last-of-type{border-bottom:none;}
+  h2{
+    font-family:Cambria, Georgia, serif;
+    color:var(--darkteal); font-size:22px; margin:0 0 4px;
+    display:flex; align-items:center; gap:10px;
+  }
+  h2 .num{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:28px; height:28px; border-radius:50%;
+    background:var(--teal); color:#fff; font-size:14px; font-weight:700;
+    flex:0 0 auto;
+  }
+  .section-sub{color:var(--muted); font-size:14px; margin:0 0 20px 38px;}
+  .card{
+    background:#fff; border:1px solid #E7E3DC; border-radius:10px;
+    padding:20px 22px; margin-bottom:14px;
+  }
+  .card h3{margin:0 0 8px; font-size:16px; color:var(--darkteal);}
+  .quote{
+    font-style:italic; color:var(--darkteal); border-left:3px solid var(--teal);
+    padding:2px 0 2px 14px; margin:10px 0;
+  }
+  .person-card{
+    background:var(--mint); border-radius:10px; padding:22px 24px; margin-bottom:14px;
+  }
+  .person-card h3{margin:0 0 2px; font-size:19px; color:var(--darkteal); font-family:Cambria, Georgia, serif;}
+  .person-role{color:var(--teal); font-weight:700; font-size:13px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:12px;}
+  .person-card a{color:var(--darkteal);}
+  .central-test{
+    background:#fff; border-radius:8px; padding:14px 16px; margin-top:14px;
+    border:1px dashed var(--teal);
+  }
+  .central-test .label{font-weight:700; color:var(--darkteal); font-size:12px; text-transform:uppercase; letter-spacing:.05em; margin-bottom:4px;}
+  .strength-card{
+    background:var(--paleGreen); border-radius:10px; padding:18px 20px; margin-bottom:12px;
+    border-left:4px solid var(--textGreen);
+  }
+  .strength-card h3{margin:0 0 6px; color:var(--darkteal); font-size:16px;}
+  .prep-card{
+    background:var(--paleAmber); border-radius:10px; padding:18px 20px; margin-bottom:12px;
+    border-left:4px solid var(--textAmber);
+  }
+  .prep-card h3{margin:0 0 6px; color:var(--darkteal); font-size:16px;}
+  .task-box{
+    background:var(--darkteal); color:#fff; border-radius:10px; padding:22px 24px; margin-bottom:14px;
+  }
+  .task-box h3{margin:0 0 8px; color:#fff; font-size:17px; font-family:Cambria, Georgia, serif;}
+  .task-box p{color:#DCEDE9; margin:0 0 0;}
+  .tag{
+    display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase;
+    letter-spacing:.04em; padding:3px 9px; border-radius:12px; margin-bottom:8px;
+  }
+  .tag.green{background:var(--paleGreen); color:var(--textGreen);}
+  .tag.amber{background:var(--paleAmber); color:var(--textAmber);}
+  .remember-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:640px){.remember-grid{grid-template-columns:1fr;}}
+  .lead-with, .avoid{border-radius:10px; padding:18px 20px;}
+  .lead-with{background:var(--paleGreen); border-left:4px solid var(--textGreen);}
+  .avoid{background:var(--paleRed); border-left:4px solid var(--textRed);}
+  .lead-with h3{color:var(--textGreen); margin:0 0 10px; font-size:15px;}
+  .avoid h3{color:var(--textRed); margin:0 0 10px; font-size:15px;}
+  ul{margin:0; padding-left:20px;}
+  li{margin-bottom:6px;}
+  .footer-note{
+    text-align:center; color:var(--muted); font-size:12px; padding:30px 0 0;
+  }
+  .divider-note{
+    background:var(--mint); border-radius:8px; padding:12px 16px; font-size:13px;
+    color:var(--darkteal); margin-bottom:18px;
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Raise + Recruit · Final-Stage Interview Preparation</div>
+    <h1>Emma Hickey</h1>
+    <div class="role-line">Business &amp; Finance Manager · Headway Cardiff and South East Wales</div>
+    <div class="links">
+      <a href="https://headway-candidate-brief.vercel.app/" target="_blank">Candidate Brief</a>
+      <a href="https://headwaycardiff.com/about/" target="_blank">About Headway Cardiff</a>
+      <a href="https://headwaycardiff.com/get-involved/" target="_blank">Headway Cardiff website</a>
+      <a href="https://www.linkedin.com/in/rebecca-pearce-948907243/" target="_blank">Rebecca Pearce — LinkedIn</a>
+      <a href="https://www.linkedin.com/in/lisa-lambly-87424b68/" target="_blank">Lisa Lambly — LinkedIn</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="divider-note">
+      Well done getting to this stage, Emma — this is the final interview, and it's confirmed with Rebecca Pearce and Lisa Lambly. This page is here to help you walk in prepared and confident, not to script you word-for-word. Use it, then make it your own.
+    </div>
+    <div class="card" style="margin-top:14px;">
+      <h3>Your interview — confirmed details</h3>
+      <p><strong>When:</strong> 2:00pm, Monday 17 August 2026</p>
+      <p><strong>Where:</strong> University Hospital, Penlan Road, Llandough, Penarth, Cardiff, CF64 2XX</p>
+      <p style="margin-bottom:0;"><strong>Parking:</strong> instructions to follow — I'll send these on as soon as I have them.</p>
+    </div>
+    <div class="card" style="margin-top:14px;">
+      <h3>Before then — your telephone briefing call</h3>
+      <p style="margin-bottom:0;">I'll call you for a short pre-interview briefing on <strong>Friday 14 August at 10:00am</strong>. If you need to reach me beforehand, call me on <strong>07899 993300</strong>.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">1</span>About Headway Cardiff and South East Wales</h2>
+    <p class="section-sub">Who they are, and what you're walking into</p>
+    <div class="card">
+      <p>Headway Cardiff and South East Wales is an independent charity — separate from Headway UK, though it shares the name and works in partnership with it — supporting people affected by acquired brain injury (ABI) to rebuild their lives and regain independence. It was founded in 1985 as a support group by ABI patients, families and therapists, and today supports around 500–600 people a year across Cardiff, the Vale of Glamorgan, Bridgend, RCT, Merthyr, Newport, Blaenau Gwent, Caerphilly and Monmouthshire.</p>
+      <p>Services span an Information &amp; Outreach team (first point of contact), welfare benefits support, counselling, a monthly carers' group, weekly walking/wheeling groups, and an Independence &amp; Wellbeing Centre (based at University Hospital Llandough, with community sessions elsewhere) — around 100 of the 500–600 people supported each year attend the centre itself.</p>
+      <p>It's a small organisation — 15 staff, most part-time, backed by around 60 volunteers, including a core of psychology placement students who rotate through on nine-month blocks. Income is just over £540k a year, roughly 70% from statutory contracts with local authorities and health boards (day-centre places, essentially), and the rest from donations, corporate sponsorship and its own fundraising. Reserves are healthy — well above the charity's own target — so this is a stable, sustainably-run organisation, not one in crisis. It picked up a national Volunteer of the Year award in 2025 and was an Innovation Award finalist in 2023.</p>
+      <p><strong>Mission:</strong> "To promote understanding of all aspects of acquired brain injury and to provide information, support, and services to people with acquired brain injury, their families and carers." Headway is built around a simple ambition — that people with ABI and their families aren't isolated or disadvantaged, that they get real support to adapt to life after injury, and that their independence, skills and quality of life are maximised.</p>
+      <p><strong>The role itself:</strong> this is a genuinely senior post — reporting directly to Rebecca as CEO, and a key priority hire for Headway to increase the charity's management capacity. You'd manage two administrators (finance and people/HR), hold Data Protection Officer responsibility, act as designated fire warden and office first aider, and formally deputise for the CEO when required — including attending Trustee meetings. It's based at University Hospital Llandough, three days a week in the office with the rest home-based, 37 hours a week, and occasionally evenings or weekends.</p>
+      <p><strong>Why this matters for you:</strong> this is a lean, relationship-driven charity where the back office has historically been held together by very few people. That's the gap you'd be stepping into — and it's a very similar shape to where PROPS was a few years into your own time there, which is worth having in your back pocket if it comes up.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">2</span>The People You'll Meet</h2>
+    <p class="section-sub">Who's likely to be in the room</p>
+    <div class="person-card">
+      <h3>Rebecca Pearce</h3>
+      <div class="person-role">Chief Executive Officer, Headway Cardiff and South East Wales · since December 2015</div>
+      <p>Rebecca has spent her career in the charity and social care sector, including a national role at the MS Society before joining Headway. She holds management and leadership qualifications and has led Headway through a decade of steady, careful growth — deliberately choosing sustainable development over rapid expansion, and keeping a close eye on the charity's exposure to statutory funding risk.</p>
+      <p>She runs a genuinely small team. Right now, she is personally covering a lot of the back-office finance and compliance work herself — payroll, contracts, health &amp; safety, data protection — alongside leading the organisation. She's created this role specifically to hand that over, so she can spend more time on relationships, funding and strategy.</p>
+      <p>In conversation, Rebecca is warm, informal and direct. She talks openly, doesn't hide behind corporate language, and clearly wants the same honesty back. She isn't looking for a polished pitch; she's looking for someone she can trust to just get on with things without much oversight.</p>
+      <p><a href="https://www.linkedin.com/in/rebecca-pearce-948907243/" target="_blank">View Rebecca's LinkedIn profile →</a></p>
+      <div class="central-test">
+        <div class="label">What she's really testing for</div>
+        Can you run the back office — finance, payroll, HR admin, compliance, health &amp; safety — independently and reliably, day to day, without needing to be managed closely? Can she hand you real responsibility, including covering for her and Lisa when they're out, and trust you to make sound calls on your own? And do you genuinely want to be at a small charity for the right reasons, not just as a stepping stone?
+      </div>
+    </div>
+
+    <div class="person-card">
+      <h3>Lisa Lambly</h3>
+      <div class="person-role">Director of Services, Headway Cardiff and South East Wales</div>
+      <p>Lisa leads the service-delivery side of Headway — she manages the team running the Independence &amp; Wellbeing Centre and the day-to-day face-to-face work with the people Headway supports, and line-manages the services administrator. She works a part-time pattern (she isn't in every Friday).</p>
+      <p>Alongside Rebecca, Lisa currently carries a lot of the day-to-day decision-making responsibility for the centre — if something happens on site, it's one of the two of them making the call. This role is being created partly to build in proper cover for moments when Rebecca and Lisa are both away at the same time, so Lisa has a direct stake in knowing whoever's hired can be trusted to hold things steady in that gap.</p>
+      <p><a href="https://www.linkedin.com/in/lisa-lambly-87424b68/" target="_blank">View Lisa's LinkedIn profile →</a></p>
+      <div class="central-test">
+        <div class="label">What she's likely watching for</div>
+        Whether you'd be a safe pair of hands to lean on when she and Rebecca can't both be reached — practical, calm under pressure, and someone who'd know when to act and when to escalate.
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">3</span>Why This Role — Preparing Your Answers</h2>
+    <p class="section-sub">Use your own real story. It's a strong one.</p>
+    <div class="card">
+      <h3>Why you're ready to move on</h3>
+      <p>You've already said it plainly, and it's the truest answer you've got: it's time to go. You joined PROPS when it was roughly Headway's size now — eight staff — and you built up real depth across the whole back office because that's what a small charity needs. PROPS has since grown to 75 staff, and you're still the one holding month-end together with just 15 hours a week of assistant support. You've asked for help and it's taken a long time to get even that.</p>
+      <div class="quote">"It's still me doing all that stuff... I'm doing everything."</div>
+      <p>Be matter-of-fact about this rather than resentful — Rebecca will recognise the shape of it immediately, because it's exactly the gap she's trying to close at Headway before it happens to her.</p>
+      <h3>Why Headway specifically</h3>
+      <p>You put it well yourself: Headway sounds like what PROPS was a few years ago. That's a genuine, specific reason to want this — you're not just leaving PROPS, you're choosing to go somewhere the size and shape suits the way you like to work, where your breadth of experience is exactly what's needed, and where you'd be building the function properly from an earlier stage rather than firefighting inside one that's outgrown its support.</p>
+      <div class="quote">"It's coming purely within the charity sector. I'm not interested in making money."</div>
+      <p>That line is worth having ready in some form. Rebecca isn't going to be won over by ambition or salary talk — she'll respond to genuine commitment to the sector and to Headway's mission specifically. If you know a little about what Headway actually does day to day (see Section 1), work it into your answer naturally rather than reciting facts.</p>
+      <h3>Headway's own values — worth knowing before you go in</h3>
+      <p>Headway sets out its expected values under four headings: being <strong>attentive, empathetic, respectful and empowering</strong> towards the people they support; being <strong>sincere, trustworthy and just</strong> — reliable and honest in what you say and do; being <strong>clear and professional</strong> in how you communicate and hold yourself accountable; and being <strong>competent, reliable, safe, open and accountable</strong> — including being willing to recognise mistakes, raise concerns, and keep learning. These aren't abstract — they're the actual framework Headway measures its people against, so if you're asked what values mean to you or to give an example of living them out, it's worth quietly anchoring your real examples (the fraud disclosure, the expenses policy, the QuickBooks self-teaching) to language like this rather than generic "I care about people" answers.</p>
+      <h3>What to avoid</h3>
+      <p>Try not to let the PROPS story tip into complaint. You lived through a genuinely hard period there — a financial crisis, working 10–11 hour days holding things together, being told you'd be looked after and then not — and it's fair to be honest about that. But frame it as evidence of what you're capable of under pressure, not as a grievance. Rebecca will draw her own conclusions about PROPS; you don't need to editorialise.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">4</span>Your Strengths — Lead With These</h2>
+    <p class="section-sub">Real evidence from your own history — have the specifics ready</p>
+
+    <div class="strength-card">
+      <span class="tag green">Financial control &amp; payroll depth</span>
+      <h3>You've run a whole finance function solo, at scale</h3>
+      <p>You are the finance function at a 75-staff charity — month end, payroll, the lot — with only 15 hours a week of support. You've talked through a real example of correcting sick leave, a salary change and pension contributions all in the same payroll run without anything slipping. That kind of multi-thread accuracy under pressure is exactly what a lean back office needs, and it's rare. Lead with concrete detail, not generalities.</p>
+    </div>
+
+    <div class="strength-card">
+      <span class="tag green">Judgement under pressure</span>
+      <h3>You've made the hard call when it mattered</h3>
+      <p>You raised your own suspicions of fraud to the trustees, unprompted — that's a genuinely strong example of integrity and autonomous judgement, and worth telling clearly and calmly if the conversation opens the door to it (a time you handled a difficult or sensitive situation, spotted a problem, or had to act without being told to). You also wrote a new expenses policy after a card-payment incident exposed a gap in process — you don't just spot problems, you fix them properly so they don't recur.</p>
+    </div>
+
+    <div class="strength-card">
+      <span class="tag green">Learning agility</span>
+      <h3>You've taught yourself a new system fast, out of necessity</h3>
+      <p>When your bookkeeper left, you migrated the organisation from Sage to QuickBooks yourself this year — self-taught, largely from video guides, running daily, weekly and monthly tasks as you learned them. Headway will likely want to know you can pick up new systems and processes without much hand-holding; this is your proof point.</p>
+    </div>
+
+    <div class="strength-card">
+      <span class="tag green">Genuine values, not just words</span>
+      <h3>You already go beyond the job description</h3>
+      <p>You get up at 5am to support the annual B2B Bristol charity bike ride, and you organise rugby matches for the charity at Christmas with your son. These aren't things you were asked to do — they're evidence of exactly the kind of person Rebecca is looking for: someone who's genuinely invested in the cause, not just doing a job. Have one of these ready as a real, specific example if you're asked what "going beyond your role" looks like to you.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">5</span>Areas to Prepare</h2>
+    <p class="section-sub">Be honest, not defensive — Rebecca values straight answers over polish</p>
+
+    <div class="prep-card">
+      <span class="tag amber">Budget-building &amp; audit exposure</span>
+      <h3>Your experience has been more operational than strategic</h3>
+      <p>Most of your depth is in the day-to-day running of the finance function — payroll, month end, corrections, compliance — rather than building a budget from scratch or leading an audit file end to end. If asked about this, don't overclaim. Be honest that your exposure has mostly come from being the one who <em>lives inside</em> the numbers day to day, and frame that as a strong foundation to build formal budgeting and audit-lead experience on top of, rather than a gap you're covering for.</p>
+    </div>
+
+    <div class="prep-card">
+      <span class="tag amber">Systems &amp; vendor management</span>
+      <h3>Lean on the QuickBooks story, and be upfront about the rest</h3>
+      <p>If asked about experience with accounting software, contracts or negotiating with suppliers/vendors, the QuickBooks migration is your strongest card — use it. If pushed further on vendor negotiation specifically and you don't have much to point to, say so plainly and pivot to how you approach learning something new (see Section 4) — that's a more convincing answer than stretching a thin example.</p>
+    </div>
+
+    <div class="prep-card">
+      <span class="tag amber">Health &amp; safety for a physical building</span>
+      <h3>Think this through beforehand — it's a real, live part of the role</h3>
+      <p>Headway runs a day centre and community sessions from physical premises, so health &amp; safety here isn't a policy exercise — it's noticing risks day to day, actioning them, and knowing the fire evacuation procedure cold. If your current H&amp;S exposure is lighter or more remote-based, it's worth spending some time before the interview thinking practically: what would you check first walking into a new building, how would you familiarise yourself with an evacuation procedure, what would "good" look like. You don't need to be an expert — you need to show you'd take it seriously and get up to speed fast.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="task-box">
+      <h3>There will be a written task</h3>
+      <p>As part of this stage, expect a short timed written exercise — roughly an hour — covering practical back-office scenarios similar to what you'd meet in the role day to day. Based on what's been shared with you, expect it to touch on a payroll or salary-cost style calculation, and some thinking around new-starter administration and health &amp; safety risk areas for a building. You won't see the specifics beforehand, and that's deliberate — it's designed to test how you think on your feet and work through a practical problem methodically, not what you've memorised or rehearsed. Read each part carefully, show your workings clearly, note any assumptions you make, and don't be afraid to flag if something's ambiguous rather than guessing silently.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">6</span>What the Conversation Will Likely Explore</h2>
+    <p class="section-sub">General themes, not the actual questions — come with real examples ready for each</p>
+    <div class="card">
+      <p>Without giving away the specifics, expect the interview to explore territory like:</p>
+      <ul>
+        <li>How your skills and experience map onto what the role actually needs day to day</li>
+        <li>Your familiarity with accounting/finance software and general office administration practices</li>
+        <li>Your understanding of good HR practice and employment principles</li>
+        <li>What Headway's values mean to you personally (see Section 3 for the actual framework), and how you'd bring them to life practically — not just in words</li>
+        <li>A real example of a mistake you've made and how you handled putting it right</li>
+        <li>A difficult people or HR-related situation you've navigated, and how you approached it</li>
+        <li>What "going beyond your role" looks like for you at a small charity</li>
+      </ul>
+      <p>You already have strong, real material for every one of these — see Section 4. The best preparation isn't guessing the exact questions; it's having two or three specific, concrete stories ready that you can adapt to whatever's actually asked.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="num">7</span>Key Things to Remember</h2>
+    <div class="remember-grid">
+      <div class="lead-with">
+        <h3>Lead with</h3>
+        <ul>
+          <li>Specific, real examples — the payroll correction, the fraud disclosure, the QuickBooks migration, the bike ride</li>
+          <li>Honesty about what you haven't done as much of, framed as a strong base to build on</li>
+          <li>Genuine enthusiasm for Headway's mission, not just "a charity role"</li>
+          <li>Calm, practical confidence — Rebecca responds to straight talk, not polish</li>
+        </ul>
+      </div>
+      <div class="avoid">
+        <h3>Avoid</h3>
+        <ul>
+          <li>Letting the PROPS story tip into complaint rather than evidence</li>
+          <li>Overclaiming on budgeting, audit or vendor experience you haven't actually had</li>
+          <li>Generic answers on values or "going beyond the role" — always land on a real example</li>
+          <li>Rushing the written task — read it fully before you start writing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-note">Prepared by Raise + Recruit for Emma Hickey ahead of her final-stage interview · Good luck, Emma.</div>
+
+</div>
+</body>
+</html>
