@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business & Finance Manager — Candidate Comparison | Headway</title>
+<style>
+  :root{
+    --darkteal:#0F2D35;
+    --teal:#3F9588;
+    --mint:#E3F6F4;
+    --paleGreen:#D9F4E3;
+    --paleAmber:#FFF2CF;
+    --paleRed:#FBDCE1;
+    --textGreen:#1E7B34;
+    --textAmber:#8A6D1D;
+    --textRed:#B3261E;
+    --greyRow:#F7F7F7;
+    --ink:#1C2B2E;
+    --muted:#5B6E70;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0;
+    font-family:Calibri, "Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+    background:#FAFAF9;
+    line-height:1.55;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px 80px;}
+  header.hero{background:var(--darkteal); color:#fff; padding:44px 24px 32px;}
+  header.hero .wrap{padding:0;}
+  nav{display:flex; gap:18px; flex-wrap:wrap; margin-top:18px;}
+  nav a{color:#CFE9E4; text-decoration:none; font-size:13px; border-bottom:1px solid transparent;}
+  nav a:hover{border-color:var(--teal);}
+  .eyebrow{text-transform:uppercase; letter-spacing:.12em; font-size:12px; color:var(--teal); font-weight:700; margin-bottom:10px;}
+  h1{font-family:Cambria, Georgia, serif; font-size:30px; margin:0 0 6px; font-weight:700; line-height:1.2;}
+  .role-line{font-size:15px; color:#CFE9E4;}
+  section{padding:36px 0; border-bottom:1px solid #E7E3DC;}
+  section:last-of-type{border-bottom:none;}
+  h2{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:21px; margin:0 0 16px;}
+  h3{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:17px; margin:20px 0 8px;}
+  .card{background:#fff; border:1px solid #E7E3DC; border-radius:10px; padding:20px 22px; margin-bottom:14px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:10px 0;}
+  th, td{text-align:left; padding:8px 10px; border-bottom:1px solid #E7E3DC; vertical-align:top;}
+  th{background:var(--darkteal); color:#fff; font-weight:600; font-size:12.5px;}
+  tr:nth-child(even) td{background:var(--greyRow);}
+  td.center, th.center{text-align:center;}
+  .rag-green{color:var(--textGreen); font-weight:700;}
+  .rag-amber{color:var(--textAmber); font-weight:700;}
+  .rag-red{color:var(--textRed); font-weight:700;}
+  td.rag-bg-green{background:var(--paleGreen) !important; color:var(--textGreen); font-weight:700;}
+  td.rag-bg-amber{background:var(--paleAmber) !important; color:var(--textAmber); font-weight:700;}
+  td.rag-bg-red{background:var(--paleRed) !important; color:var(--textRed); font-weight:700;}
+  .total-row td{font-weight:700; background:var(--mint) !important; border-top:2px solid var(--teal);}
+  .verdict-box{background:var(--darkteal); color:#fff; border-radius:10px; padding:22px 24px; margin:16px 0;}
+  .verdict-box .score{font-family:Cambria, Georgia, serif; font-size:24px; color:#fff; margin-bottom:8px;}
+  .verdict-box p{color:#DCEDE9; margin:8px 0 0;}
+  .flags-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;}
+  @media (max-width:640px){.flags-grid{grid-template-columns:1fr;} .profile-header{flex-direction:column; align-items:flex-start !important;}}
+  .flag-box{border-radius:10px; padding:16px 18px; font-size:13.5px;}
+  .flag-box.red{background:var(--paleRed); border-left:4px solid var(--textRed);}
+  .flag-box.green{background:var(--paleGreen); border-left:4px solid var(--textGreen);}
+  .flag-box h4{margin:0 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:.03em;}
+  .flag-box.red h4{color:var(--textRed);}
+  .flag-box.green h4{color:var(--textGreen);}
+  .flag-box ul{margin:0; padding-left:18px;}
+  .flag-box li{margin-bottom:8px;}
+  .note-box{background:var(--mint); border-radius:8px; padding:14px 16px; font-size:13.5px; color:var(--darkteal); margin-bottom:16px;}
+  .profile-header{background:var(--mint); border-radius:10px; padding:20px 22px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  .profile-header h3{margin:0 0 4px; font-size:20px;}
+  .profile-header .meta{color:var(--muted); font-size:13px;}
+  .score-pill{background:var(--darkteal); color:#fff; border-radius:10px; padding:10px 18px; text-align:center; min-width:100px;}
+  .score-pill .num{font-family:Cambria, Georgia, serif; font-size:26px; font-weight:700;}
+  .score-pill .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#CFE9E4;}
+  .footer-note{text-align:center; color:var(--muted); font-size:12px; padding:30px 0 0;}
+  .rank-badge{display:inline-block; background:var(--teal); color:#fff; font-weight:700; font-size:12px; border-radius:14px; padding:3px 12px; margin-right:8px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Raise + Recruit · Candidate Comparison</div>
+    <h1>Business &amp; Finance Manager</h1>
+    <div class="role-line">Headway Cardiff and South East Wales · 4 candidates through process · Prepared 21 August 2026</div>
+    <nav>
+      <a href="#framework">Assessment Framework</a>
+      <a href="#comparison">Comparison</a>
+      <a href="#lauran">Lauran Jenkins</a>
+      <a href="#rachel">Rachel Biggs</a>
+      <a href="#maryse">Maryse Degbegni</a>
+      <a href="#emma">Emma Hickey</a>
+      <a href="#recommendation">My Recommendation</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="note-box">
+      This report brings together the four candidates who have now completed my process: Emma Hickey, Maryse Degbegni, Lauran Jenkins and Rachel Biggs. Emma has already had her client interview with you and Lisa on 17 August, so her score is included here for comparison only. Maryse and Lauran have each completed a first interview and a structured competency interview. Rachel's process concluded with a first interview and a further 1.5-hour follow-up conversation with me rather than the standard competency interview — I was confident enough from that conversation not to need it, but it's a slightly different process to the other two, which I've flagged where relevant below.
+    </div>
+  </section>
+
+  <section id="framework">
+    <h2>Assessment Framework &amp; Important Notes</h2>
+    <div class="card">
+      <h3>Please read before reviewing scores</h3>
+      <p>The assessment, scores and commentary in this report represent my interpretation of each candidate's performance through the process — CV, first interview and (for three of the four) a structured competency interview. It is not a definitive assessment of their capability or potential.</p>
+      <p>Scores are based on specific evidence gathered through the process. Every candidate may perform differently in person, under different conditions, or when responding to your and Lisa's own questions framed in a way that suits their communication style. This report is intended as a guide to inform your own assessment at interview — not as a final verdict. The final decision rests entirely with you and Lisa.</p>
+      <h3>How scores are calculated</h3>
+      <p>Each candidate is assessed across the same ten dimensions, weighted according to the priorities you set out. A score out of 10 is given per dimension, multiplied by the weighting, to produce a weighted score out of 100. Where a dimension was tested at both first and competency interview, the score shown is a straight average of the two; where only one interview tested a dimension, that single score stands.</p>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>What it measures</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>Day-to-day ownership of payroll, accounts and financial controls</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>Speed and confidence picking up new systems and processes</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>Building a budget from scratch, annual accounts and funder-facing reporting</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>Managing and procuring IT, accountancy and office systems</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>HR processes, staff administration and day-to-day people management</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>Ability to make sound calls independently and cover senior absence</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>Practical, people-focused evidence of values in action</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>On-site availability, commute and commitment</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>Noticing and actioning risk, fire evacuation knowledge — a live, daily part of the role</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>DPO responsibilities and GDPR compliance</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="comparison">
+    <h2>Comparison at a Glance</h2>
+    <div class="card">
+      <table>
+        <tr>
+          <th>Dimension (weight)</th>
+          <th class="center">Lauran<br>Jenkins</th>
+          <th class="center">Rachel<br>Biggs</th>
+          <th class="center">Maryse<br>Degbegni</th>
+          <th class="center">Emma<br>Hickey</th>
+        </tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring (25%)</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-green">8.5</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-green">8.0</td></tr>
+        <tr><td>Learning Agility (15%)</td><td class="center rag-bg-green">7.5</td><td class="center rag-bg-green">7.5</td><td class="center rag-bg-green">8.75</td><td class="center rag-bg-green">7.5</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting (10%)</td><td class="center rag-bg-amber">7.0</td><td class="center rag-bg-green">8.5</td><td class="center rag-bg-amber">6.5</td><td class="center rag-bg-amber">5.75</td></tr>
+        <tr><td>IT, Systems &amp; Procurement (10%)</td><td class="center rag-bg-green">9.0</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-amber">6.0</td></tr>
+        <tr><td>Office &amp; People Administration (10%)</td><td class="center rag-bg-amber">5.5</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-amber">5.75</td><td class="center rag-bg-amber">6.75</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (9%)</td><td class="center rag-bg-green">7.5</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-amber">6.0</td><td class="center rag-bg-green">8.75</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit (7%)</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-green">7.5</td><td class="center rag-bg-green">8.0</td><td class="center rag-bg-green">9.0</td></tr>
+        <tr><td>Practical Fit &amp; Logistics (6%)</td><td class="center rag-bg-green">9.0</td><td class="center rag-bg-green">9.0</td><td class="center rag-bg-green">7.5</td><td class="center rag-bg-green">7.75</td></tr>
+        <tr><td>Health &amp; Safety (5%)</td><td class="center rag-bg-green">7.5</td><td class="center rag-bg-green">7.5</td><td class="center rag-bg-amber">5.25</td><td class="center rag-bg-red">4.75</td></tr>
+        <tr><td>Data Protection &amp; Compliance (3%)</td><td class="center rag-bg-amber">6.5</td><td class="center rag-bg-green">9.0</td><td class="center rag-bg-amber">6.75</td><td class="center rag-bg-amber">5.25</td></tr>
+        <tr class="total-row"><td>TOTAL / 100</td><td class="center">76.2</td><td class="center">81.3</td><td class="center">73.5</td><td class="center">72.5</td></tr>
+        <tr><td>Process stage</td><td class="center" style="font-size:12px;">First + competency</td><td class="center" style="font-size:12px;">First + 1.5hr follow-up</td><td class="center" style="font-size:12px;">First + competency</td><td class="center" style="font-size:12px;">First + competency</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="lauran">
+    <h2><span class="rank-badge">1</span>Lauran Jenkins</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Lauran Jenkins</h3>
+        <div class="meta">Office &amp; Finance Manager (functioning as Business &amp; Finance Director), Design Commission for Wales · Based in Neath</div>
+      </div>
+      <div class="score-pill"><div class="num">76.2</div><div class="lbl">/ 100</div></div>
+    </div>
+    <div class="card">
+      <p>The strongest technical evidence of any candidate — a solo, independently-validated three-year system migration, and genuine hands-on IT procurement experience. Financial control and payroll are confirmed solid at both stages, and her answer on owning and disclosing a mistake was the best of anyone across the whole process. Salary, notice period and on-site commitment are all cleanly confirmed.</p>
+      <p>People management remains her least-evidenced area after two chances to test it, and is worth probing yourselves. Worth a practical conversation too: at her current employer she's effectively the sole authoriser for payments day to day, which is a fact about that organisation's staffing rather than her own competence, but it's worth understanding how she'd want cover to work at Headway.</p>
+    </div>
+  </section>
+
+  <section id="rachel">
+    <h2><span class="rank-badge">2</span>Rachel Biggs</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Rachel Biggs</h3>
+        <div class="meta">Chief Executive, Cardiff Foodbank · Based in Cardiff</div>
+      </div>
+      <div class="score-pill"><div class="num">81.3</div><div class="lbl">/ 100</div></div>
+    </div>
+    <div class="card">
+      <p>A sitting charity CEO with genuine, senior-level evidence across almost every dimension: full ownership of budgeting, management accounts and payroll; a standout, regulation-literate response to a live data breach; three years of real autonomy and people leadership; and hands-on procurement experience from leading a CRM sourcing project end-to-end. She's Cardiff-based, comfortable with three days on site, and has voluntarily accepted a pay drop from her current salary.</p>
+      <p>The genuinely open question isn't a skills gap — it's the dynamic of her moving from CEO to a subordinate role, which I've raised with her directly and would recommend you test yourselves at interview. I didn't feel a further competency interview would add much beyond what a 1.5-hour conversation already told me, but that means her evidence base is slightly different in shape to the other three candidates here.</p>
+    </div>
+  </section>
+
+  <section id="maryse">
+    <h2><span class="rank-badge">3</span>Maryse Degbegni</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Maryse Degbegni</h3>
+        <div class="meta">Operations Manager, Soundabout (also Accounts Officer, Newbigin Community Trust) · Based in Cheltenham</div>
+      </div>
+      <div class="score-pill"><div class="num">73.5</div><div class="lbl">/ 100</div></div>
+    </div>
+    <div class="card">
+      <p>Improved more than any other candidate between first and competency interview. Her standout is learning agility — she taught herself a finance system from scratch under real pressure, then proactively improved it, saving 90% of the time it used to take. Health &amp; safety and autonomy both moved from her weakest areas to genuine strengths once tested properly at competency stage.</p>
+      <p>She has no hands-on experience preparing a budget or annual accounts, or managing a live underperformance case — both honestly disclosed and well-reasoned rather than avoided, but genuinely untested in practice. She's still holding a second part-time role and would need to give notice there if offered this position.</p>
+    </div>
+  </section>
+
+  <section id="emma">
+    <h2><span class="rank-badge">4</span>Emma Hickey</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Emma Hickey</h3>
+        <div class="meta">Finance Manager, Providing Opportunities &amp; Support (PROPS) · Based in Fishponds, Bristol · Already interviewed by you and Lisa on 17 August</div>
+      </div>
+      <div class="score-pill"><div class="num">72.5</div><div class="lbl">/ 100</div></div>
+    </div>
+  </section>
+
+  <section id="recommendation">
+    <h2>My Recommendation</h2>
+    <div class="verdict-box">
+      <div class="score">Recommend progressing Lauran, Rachel and Maryse to client interview</div>
+      <p>Emma has already been through her client interview with you and Lisa, so her score above is included for comparison only. Of the remaining three, Lauran and Rachel are currently ahead on combined score, but for different reasons and with different open questions — Lauran's is a specific, practical conversation to have on cover/backup arrangements, Rachel's is a dynamic to test in person (CEO stepping into a subordinate role) rather than a skills gap. Maryse is close behind, strongest on learning agility and systems improvement, with honestly-disclosed, untested-rather-than-failed gaps on budget preparation and performance management.</p>
+      <p>I'd suggest going into the client interviews with the specific follow-up points raised above for each candidate front of mind, rather than treating the ranking above as the final word — it reflects the evidence gathered so far, not how each of them will come across in the room with you and Lisa.</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer-note">Raise + Recruit · Built for charities, not for profit</div>
+
+</body>
+</html>
