@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business & Finance Manager — Candidate Report | Headway</title>
+<style>
+  :root{
+    --darkteal:#0F2D35;
+    --teal:#3F9588;
+    --mint:#E3F6F4;
+    --paleGreen:#D9F4E3;
+    --paleAmber:#FFF2CF;
+    --paleRed:#FBDCE1;
+    --textGreen:#1E7B34;
+    --textAmber:#8A6D1D;
+    --textRed:#B3261E;
+    --greyRow:#F7F7F7;
+    --ink:#1C2B2E;
+    --muted:#5B6E70;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0;
+    font-family:Calibri, "Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+    background:#FAFAF9;
+    line-height:1.55;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px 80px;}
+  header.hero{background:var(--darkteal); color:#fff; padding:44px 24px 32px;}
+  header.hero .wrap{padding:0;}
+  nav{display:flex; gap:18px; flex-wrap:wrap; margin-top:18px;}
+  nav a{color:#CFE9E4; text-decoration:none; font-size:13px; border-bottom:1px solid transparent;}
+  nav a:hover{border-color:var(--teal);}
+  .eyebrow{text-transform:uppercase; letter-spacing:.12em; font-size:12px; color:var(--teal); font-weight:700; margin-bottom:10px;}
+  h1{font-family:Cambria, Georgia, serif; font-size:30px; margin:0 0 6px; font-weight:700; line-height:1.2;}
+  .role-line{font-size:15px; color:#CFE9E4;}
+  section{padding:36px 0; border-bottom:1px solid #E7E3DC;}
+  section:last-of-type{border-bottom:none;}
+  h2{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:21px; margin:0 0 16px;}
+  h3{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:17px; margin:20px 0 8px;}
+  .card{background:#fff; border:1px solid #E7E3DC; border-radius:10px; padding:20px 22px; margin-bottom:14px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:10px 0;}
+  th, td{text-align:left; padding:8px 10px; border-bottom:1px solid #E7E3DC; vertical-align:top;}
+  th{background:var(--darkteal); color:#fff; font-weight:600; font-size:12.5px;}
+  tr:nth-child(even) td{background:var(--greyRow);}
+  .rag-green{color:var(--textGreen); font-weight:700;}
+  .rag-amber{color:var(--textAmber); font-weight:700;}
+  .rag-red{color:var(--textRed); font-weight:700;}
+  .total-row td{font-weight:700; background:var(--mint) !important; border-top:2px solid var(--teal);}
+  .verdict-box{background:var(--darkteal); color:#fff; border-radius:10px; padding:22px 24px; margin:16px 0;}
+  .verdict-box .score{font-family:Cambria, Georgia, serif; font-size:24px; color:#fff; margin-bottom:8px;}
+  .verdict-box p{color:#DCEDE9; margin:8px 0 0;}
+  .flags-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;}
+  @media (max-width:640px){.flags-grid{grid-template-columns:1fr;}}
+  .flag-box{border-radius:10px; padding:16px 18px; font-size:13.5px;}
+  .flag-box.red{background:var(--paleRed); border-left:4px solid var(--textRed);}
+  .flag-box.green{background:var(--paleGreen); border-left:4px solid var(--textGreen);}
+  .flag-box h4{margin:0 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:.03em;}
+  .flag-box.red h4{color:var(--textRed);}
+  .flag-box.green h4{color:var(--textGreen);}
+  .flag-box ul{margin:0; padding-left:18px;}
+  .flag-box li{margin-bottom:8px;}
+  details{background:#fff; border:1px solid #E7E3DC; border-radius:10px; margin-bottom:14px; overflow:hidden;}
+  summary{cursor:pointer; padding:14px 20px; font-family:Cambria, Georgia, serif; font-size:16px; color:var(--darkteal); font-weight:700; background:var(--mint); list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; font-size:20px; color:var(--teal);}
+  details[open] summary::after{content:"–";}
+  .doc-body{padding:18px 22px; font-size:13.5px; white-space:pre-wrap; font-family:Calibri, Arial, sans-serif; color:var(--ink);}
+  .doc-body strong{color:var(--darkteal);}
+  .note-box{background:var(--mint); border-radius:8px; padding:14px 16px; font-size:13.5px; color:var(--darkteal); margin-bottom:16px;}
+  .profile-header{background:var(--mint); border-radius:10px; padding:20px 22px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  .profile-header h3{margin:0 0 4px; font-size:20px;}
+  .profile-header .meta{color:var(--muted); font-size:13px;}
+  .score-pill{background:var(--darkteal); color:#fff; border-radius:10px; padding:10px 18px; text-align:center; min-width:100px;}
+  .score-pill .num{font-family:Cambria, Georgia, serif; font-size:26px; font-weight:700;}
+  .score-pill .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#CFE9E4;}
+  .footer-note{text-align:center; color:var(--muted); font-size:12px; padding:30px 0 0;}
+  .dim-card{border-radius:8px; padding:14px 18px; margin-bottom:10px; background:var(--greyRow); border-left:4px solid var(--teal);}
+  .dim-card.green{border-left-color:var(--textGreen);}
+  .dim-card.amber{border-left-color:var(--textAmber);}
+  .dim-card.red{border-left-color:var(--textRed);}
+  .dim-card .dim-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; flex-wrap:wrap; gap:8px;}
+  .dim-card .dim-name{font-weight:700; color:var(--darkteal); font-size:14px;}
+  .dim-card .dim-score{font-weight:700; font-size:13px;}
+  .dim-card p{margin:0; font-size:13.5px;}
+  .q-tag{display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.03em; padding:2px 8px; border-radius:10px; background:var(--mint); color:var(--darkteal); margin-right:8px;}
+  .candidate-divider{border-top:3px solid var(--teal); margin:32px 0 24px; padding-top:8px;}
+  .stats-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px; margin-top:14px;}
+  @media (max-width:640px){.stats-grid{grid-template-columns:repeat(2, 1fr);}}
+  .stat-card{background:var(--mint); border-radius:10px; padding:16px 14px; text-align:center;}
+  .stat-card .stat-num{font-family:Cambria, Georgia, serif; font-size:28px; font-weight:700; color:var(--darkteal); line-height:1.1;}
+  .stat-card .stat-lbl{font-size:12px; color:var(--muted); margin-top:4px;}
+  .stat-card.muted{background:var(--greyRow);}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Raise + Recruit · Candidate Report</div>
+    <h1>Business &amp; Finance Manager</h1>
+    <div class="role-line">Headway Cardiff and South East Wales · 3 candidates recommended for final interview</div>
+    <nav>
+      <a href="#search-activity">Search Activity</a>
+      <a href="#framework">Assessment Framework</a>
+      <a href="#lauran">Lauran Jenkins</a>
+      <a href="#maryse">Maryse Degbegni</a>
+      <a href="#rachel">Rachel Biggs</a>
+      <a href="#cv">CVs</a>
+      <a href="#exploration">Interview Guidance</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="note-box">
+      This report covers Lauran Jenkins, Maryse Degbegni and Rachel Biggs, all recommended to progress to final interview with you and Lisa. Lauran and Maryse have each completed a first interview and a structured competency interview. Rachel completed one extensive first-stage screening call plus a further 1.5-hour follow-up meeting with me directly; a formal competency interview was not required given the depth of that follow-up conversation. CVs and full scorecards for all three are included below. Cover letters were not supplied for Lauran or Maryse and will be added if received.
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0;">Final interview dates</h3>
+      <table>
+        <tr><th>Candidate</th><th>Date &amp; time</th></tr>
+        <tr><td>Maryse Degbegni</td><td>10:00am, Tuesday 8 September 2026</td></tr>
+        <tr><td>Rachel Biggs</td><td>2:00pm, Thursday 10 September 2026</td></tr>
+        <tr><td>Lauran Jenkins</td><td>2:00pm, Tuesday 8 September 2026</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="search-activity">
+    <h2>Search Activity &amp; Reach</h2>
+    <div class="card">
+      <p style="margin-top:0;">A summary of the overall search activity for this role, from initial candidate identification through to final interview stage.</p>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-num">170</div>
+          <div class="stat-lbl">Candidates identified</div>
+        </div>
+        <div class="stat-card muted">
+          <div class="stat-num">83</div>
+          <div class="stat-lbl">No contact made</div>
+        </div>
+        <div class="stat-card muted">
+          <div class="stat-num">71</div>
+          <div class="stat-lbl">Rejected</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">17</div>
+          <div class="stat-lbl">Discovery calls</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">8</div>
+          <div class="stat-lbl">First interviews</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">4</div>
+          <div class="stat-lbl">Competency interviews</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="framework">
+    <h2>Assessment Framework &amp; Important Notes</h2>
+    <div class="card">
+      <h3>Please read before reviewing scores</h3>
+      <p>The assessment, scores and commentary in this report represent my interpretation of each candidate's performance across CV review, first interview and (where applicable) structured competency interview. It is not a definitive assessment of their capability or potential.</p>
+      <p>Scores are based on specific evidence gathered through the process — each candidate's written application, and their responses to the questions asked at interview. Each may perform differently in person, under different conditions, or when responding to your own questions framed in a way that suits their communication style.</p>
+      <p>This report is intended as a guide to inform your own assessment at interview — not as a final verdict. The scores and commentary should prompt lines of enquiry, not close them down. The final assessment and hiring decision rests entirely with you and Lisa.</p>
+      <h3>How scores are calculated</h3>
+      <p>Each candidate is assessed across the ten dimensions of the agreed scoring framework, each weighted according to the priorities you set out. A score out of 10 is given per dimension, multiplied by the weighting to produce a weighted score. The total is out of 100. For Lauran and Maryse, where a dimension was tested at both first and competency interview, the final score is a straight average of the two — Lauran's Practical Fit &amp; Logistics dimension was not re-tested at competency stage, so her first-interview score stands alone. Rachel's scores reflect her single, extensive first-stage conversation and follow-up meeting only, since no competency interview was conducted.</p>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>What it measures</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>Day-to-day ownership of payroll, accounts and financial controls</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>Building a budget from scratch, annual accounts and funder-facing reporting</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>Managing and procuring IT, accountancy and office systems</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>HR processes, staff administration and day-to-day people management</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>Noticing and actioning risk, fire evacuation knowledge — a live, daily part of the role</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>DPO responsibilities and GDPR compliance</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>Ability to make sound calls independently and cover senior absence</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>Speed and confidence picking up new systems and processes</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>Practical, people-focused evidence of values in action</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>On-site availability, commute and commitment</td></tr>
+      </table>
+      <h3>At a glance</h3>
+      <table>
+        <tr><th>Candidate</th><th>Current role</th><th>Combined score</th></tr>
+        <tr><td>Rachel Biggs</td><td>Chief Executive, Cardiff Foodbank</td><td class="rag-green">81.3 / 100</td></tr>
+        <tr><td>Lauran Jenkins</td><td>Office Manager (functioning at Business &amp; Finance Director level), Design Commission for Wales</td><td class="rag-green">76.2 / 100</td></tr>
+        <tr><td>Maryse Degbegni</td><td>Operations Manager, Soundabout (also Accounts Officer, Newbigin Community Trust)</td><td class="rag-amber">73.5 / 100</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="lauran">
+    <h2>Lauran Jenkins</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Lauran Jenkins</h3>
+        <div class="meta">Office Manager (functioning at Business &amp; Finance Director level), Design Commission for Wales · November 2025 – Present · Based in Neath, South Wales</div>
+        <div class="meta"><strong>Final interview:</strong> 2:00pm, Tuesday 8 September 2026</div>
+      </div>
+      <div class="score-pill">
+        <div class="num">76.2</div>
+        <div class="lbl">/ 100</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Combined Scoring — First Interview + Competency Interview</h3>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>1st Intw</th><th>Comp.</th><th>Final</th><th>RAG</th><th>Weighted</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>8</td><td>8</td><td>8.0</td><td class="rag-green">GREEN</td><td>20.00</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>7.5</td><td>6.5</td><td>7.0</td><td class="rag-amber">AMBER</td><td>7.00</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>9</td><td>9</td><td>9.0</td><td class="rag-green">GREEN</td><td>9.00</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>6</td><td>5</td><td>5.5</td><td class="rag-amber">AMBER</td><td>5.50</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>9</td><td>6</td><td>7.5</td><td class="rag-green">GREEN</td><td>3.75</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>6</td><td>7</td><td>6.5</td><td class="rag-amber">AMBER</td><td>1.95</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>8</td><td>7</td><td>7.5</td><td class="rag-green">GREEN</td><td>6.75</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>8.5</td><td>6.5</td><td>7.5</td><td class="rag-green">GREEN</td><td>11.25</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>7.5</td><td>8.5</td><td>8.0</td><td class="rag-green">GREEN</td><td>5.60</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>9</td><td>not re-tested</td><td>9.0</td><td class="rag-green">GREEN</td><td>5.40</td></tr>
+        <tr class="total-row"><td colspan="6">TOTAL WEIGHTED SCORE</td><td>76.2 / 100</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Assessment Summary</h3>
+      <p>Lauran's profile is defined by consistently strong, well-evidenced financial and systems capability across both interviews. Her financial control and payroll evidence held up fully under direct competency questioning — a fully sequenced starter/leaver/pension process with real specifics, and a genuinely good, unprompted control (bank-detail changes captured on a signed paper form, shredded once entered). She was candid that at her current employer she is effectively the sole point of financial control day to day, including that no one else currently authorises payments or accesses the bank in her absence. That reflects her current employer's staffing and structure, not a gap in her own financial control judgement, and is worth a practical conversation about cover arrangements at Headway rather than being read as a mark against her.</p>
+      <p>IT, systems and procurement is the strongest, most evidence-backed dimension in her profile — confirmed at both stages, including correcting the interviewer's assumption that she hadn't negotiated an IT contract before (she has, via a public-body tender process). This sits alongside a standout, independently-validated solo Xero migration from her CV. Her best-fitting answer against the values/integrity rubric came at competency stage: catching her own CV-numbering mix-up, disclosing it immediately to her boss and correcting it the same day.</p>
+      <p>The gap that remains genuinely untested after two opportunities is people management — no concrete example was given despite being asked twice, and the competency answer was the vaguest of her ten responses. Data protection improved with a real, if modest, incident. Salary, notice period and on-site commitment were all reconfirmed cleanly: £43-45k target, three months' notice, comfortable with at least three days on site.</p>
+    </div>
+
+    <div class="card">
+      <h3>Dimension-by-Dimension Analysis — Combined Assessment</h3>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Financial Control, Payroll &amp; Budget Monitoring</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Strong and confirmed at competency stage. The payroll answer was, if anything, sharper than round one — a fully sequenced starter/leaver/pension process with real specifics (a £5,000 emergency-tax example, the Local Government Pension Scheme named directly, an 18-day payment window) and a genuinely good, unprompted control: bank-detail changes are captured on a signed paper form which she shreds once entered. She named a concrete control she operates day to day (a £500 sign-off threshold requiring written explanation). She was candid that at her current employer she is effectively the sole point of financial control day to day, including that no one else currently authorises payments or accesses the bank in her absence — a real, practical point worth discussing for how cover would work at Headway, but a reflection of her current employer's structure, not her own competence.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Budget Preparation, Annual Accounts &amp; Funder Reporting</span><span class="dim-score rag-amber">7.0 / 10 — AMBER</span></div>
+        <p>Solid on monitoring, but the competency answer left half the question untested. She described a sensible, structured approach — separating fixed overheads from variable costs, flagging any deviation the moment it looks "skewed," with a clear example of the kind of question she'd ask. However, despite the question explicitly covering annual accounts and funder reporting, she didn't address either — no restricted funds, SORP, or funder-specific reporting formats. Combined with the first interview's real quarterly funder-claim experience, this remains capable but incompletely evidenced.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">IT, Systems &amp; Procurement</span><span class="dim-score rag-green">9.0 / 10 — GREEN</span></div>
+        <p>Consistently the strongest, most evidence-backed dimension in her profile. At competency stage she corrected the interviewer's assumption that she hadn't negotiated an IT contract before — she has, recently, as part of a public-body tender process requiring at least three competitive quotes — and gave sharp, specific evaluation criteria, distinguishing providers who merely "help you get on your emails" from those who'll meaningfully support cyber security and respond out of hours. This sits alongside the first interview's standout, independently-validated solo Xero migration. No weaknesses identified across either interview.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Office &amp; People Administration</span><span class="dim-score rag-amber">5.5 / 10 — AMBER</span></div>
+        <p>Remains the thinnest dimension in her profile, and the competency answer didn't resolve it. Where the first interview had no detail beyond passing references, this answer was the vaguest of her ten responses — no concrete description of what the underperformance actually looked like, no detail of the conversation itself, and an ambiguous ending left unexplained. A genuine, now twice-tested gap worth probing directly at final interview.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Health &amp; Safety</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>Still a net positive, but with a real asterisk. The first interview produced a genuinely standout, high-stakes example — identifying serious water contamination and overruling her own CEO on safety grounds. The competency answer was materially thinner — a credible, specific, ongoing concern about lift/wheelchair accessibility in her current listed building, but otherwise generic with no structured first-week checklist or fire risk assessment process volunteered. The strength of the first-interview evidence still carries the dimension to green.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Data Protection &amp; Compliance</span><span class="dim-score rag-amber">6.5 / 10 — AMBER</span></div>
+        <p>Improved with real, if modest, incident evidence. Asked for an actual data protection issue rather than a policy, she described a real, low-stakes near-miss (attendee contact details left visible at a conference) that she personally raised with the colleague responsible, referenced monthly staff data-protection training, and showed awareness a genuine breach would route through their IT provider and the ICO. She was honest that she hasn't handled a large data breach. A genuine step up from certifications-only evidence.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Autonomy, Judgement &amp; Decision-Making (Senior Cover)</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>Solid, but worth reading with one caveat. The competency answer — cancelling a day of design reviews and personally arranging alternative office space after discovering a serious, contaminated ceiling leak — is a genuinely strong, decisive, consequential example of solo judgement. It is, however, the same underlying incident already used in the first interview to answer the health &amp; safety question, so it should be read as one strong story doing double duty rather than two independent confirmations.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Learning Agility / Capacity to Acquire New Skills Quickly</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>Genuine strength, with one real flag on recall. Once she landed on an example — moving her employer's audit fully online for the first time via a new platform, compressing a normally month-long process into two weeks and learning the new software in two days — the detail was specific and credible. However, she could not produce this example spontaneously; the interviewer had to suggest the topic after she drew a blank, a meaningfully weaker showing on genuine, on-demand recall than her strong, self-volunteered first-interview pattern evidence.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Values, Communication &amp; Culture Fit</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Her best-fitting answer against the rubric across either interview. She described anonymising CVs for a recruitment shortlist, privately doubting her boss's numbered pick but not voicing it, sending the wrong candidate an interview invitation as a result, catching her own mistake, and immediately telling her boss directly: "sorry, completely my fault." She corrected it the same day and reflected honestly on the lesson. Honest, specific, owned without deflection, disclosed rather than concealed, and remedied quickly.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Practical Fit &amp; Logistics</span><span class="dim-score rag-green">9.0 / 10 — GREEN</span></div>
+        <p>Not re-tested at competency stage — the dedicated flexible/home-working question wasn't asked in this session — so the first-interview score stands alone per the agreed methodology. It was, however, reconfirmed in passing at the start of the competency call: current salary £43k with a target of £43-45k, three months' notice, and confirmed comfort with at least three days on site. Nothing outstanding here.</p>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="score">Combined Score: 76.2 / 100</div>
+      <p>Recommend advancing to client interview. The one operational point worth a practical conversation — how a second signatory or cover would work at Headway, given she's currently the sole authoriser at her own employer — reflects her current organisation's staffing, not a gap in her own competence. People management remains the weakest, least-evidenced dimension after two opportunities to test it, and is the one area genuinely worth probing further at final interview.</p>
+    </div>
+
+    <div class="flags-grid">
+      <div class="flag-box red">
+        <h4>Red flags</h4>
+        <ul>
+          <li>People management remains the thinnest, weakest-evidenced dimension across both interviews — no concrete example given despite being asked twice.</li>
+          <li>Budget preparation answer left annual accounts and funder reporting untested despite the question explicitly covering that ground.</li>
+          <li>Health &amp; safety and learning agility were both meaningfully weaker on their second test than their first — still net positive overall, but shouldn't be read as doubly confirmed strengths.</li>
+        </ul>
+      </div>
+      <div class="flag-box green">
+        <h4>Green flags</h4>
+        <ul>
+          <li>Best-fitting values/integrity answer of either interview — genuine ownership of a real mistake, disclosed immediately and remedied the same day.</li>
+          <li>Consistently the strongest, most evidence-backed IT/procurement dimension of any candidate seen on this campaign, confirmed at both stages.</li>
+          <li>Financial control confirmed strong at both stages — a real, concrete control in daily use and a fully sequenced, specific payroll process.</li>
+          <li>Salary, notice period, and on-site commitment all reconfirmed cleanly at the top of the competency call.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">
+      <strong>Operational note — not scored against her:</strong> at her current employer she is effectively the sole point of financial control day to day, including that no one else currently authorises payments or accesses the bank in her absence. This is a structural fact about her current organisation's staffing, not a reflection of her own skill or judgement — worth a practical conversation about how a second signatory or cover would work at Headway, rather than treating it as a mark against her.
+    </div>
+  </section>
+
+  <section id="maryse">
+    <div class="candidate-divider"></div>
+    <h2>Maryse Degbegni</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Maryse Degbegni</h3>
+        <div class="meta">Operations Manager, Soundabout (also Accounts Officer, Newbigin Community Trust) · August 2021 – Present · Based in Cheltenham</div>
+        <div class="meta"><strong>Final interview:</strong> 10:00am, Tuesday 8 September 2026</div>
+      </div>
+      <div class="score-pill">
+        <div class="num">73.5</div>
+        <div class="lbl">/ 100</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Combined Scoring — First Interview + Competency Interview</h3>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>1st Intw</th><th>Comp.</th><th>Final</th><th>RAG</th><th>Weighted</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>8</td><td>8</td><td>8.0</td><td class="rag-green">GREEN</td><td>20.00</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>6</td><td>7</td><td>6.5</td><td class="rag-amber">AMBER</td><td>6.50</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>8</td><td>8</td><td>8.0</td><td class="rag-green">GREEN</td><td>8.00</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>5</td><td>6.5</td><td>5.75</td><td class="rag-amber">AMBER</td><td>5.75</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>3.5</td><td>7</td><td>5.25</td><td class="rag-amber">AMBER</td><td>2.63</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>6</td><td>7.5</td><td>6.75</td><td class="rag-amber">AMBER</td><td>2.03</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>5</td><td>7</td><td>6.0</td><td class="rag-amber">AMBER</td><td>5.40</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>8.5</td><td>9</td><td>8.75</td><td class="rag-green">GREEN</td><td>13.13</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>8</td><td>8</td><td>8.0</td><td class="rag-green">GREEN</td><td>5.60</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>7</td><td>8</td><td>7.5</td><td class="rag-green">GREEN</td><td>4.50</td></tr>
+        <tr class="total-row"><td colspan="6">TOTAL WEIGHTED SCORE</td><td>73.5 / 100</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <p style="color:var(--muted); font-size:13px; margin-top:0;">Note: following Emma's client interview, you gave feedback that budget monitoring and financial controls (spending/authorisation limits, who can approve what, dual signatory requirements) need to be probed more explicitly for every candidate. Maryse's interviews took place before this feedback and did not directly test these specific points — flagged below and worth covering directly at final interview.</p>
+    </div>
+
+    <div class="card">
+      <h3>Assessment Summary</h3>
+      <p>Maryse improved at competency stage more than any other candidate assessed on this campaign, and on the dimensions that mattered most. Health &amp; safety moved from the weakest score in either candidate's profile to a genuine amber, on the strength of a proactive, audit-minded answer despite no physical office experience — notably, she described physically touring an office to check the paperwork matched reality on the ground, a real audit instinct rather than a recited checklist. Autonomy moved from a blank first-interview answer to a real, specific, well-handled example: cancelling a session and personally refunding attendees when a freelance practitioner failed to show, then prompting the team to create a procedure for the scenario afterwards.</p>
+      <p>Her learning agility evidence is arguably the single best answer produced across the whole process: joining her employer with no finance background right before a December year-end, self-teaching QuickBooks under genuine pressure, then proactively noticing the team was reconciling the bank manually and implementing an automatic bank feed — cutting reconciliation time by roughly 90%. IT and systems evidence remained consistently strong across both interviews, backed by a real, independently-verified data-quality project on Salesforce and a cyber insurance procurement exercise.</p>
+      <p>The remaining gaps are consistent and honestly disclosed rather than new: no hands-on experience preparing a budget or annual accounts (both employers are under the audit threshold), and no lived example of managing a live underperformance case. Both were addressed with sound, well-reasoned answers rather than bluffed or avoided. Budget monitoring and financial controls specifically (authorisation limits, dual signatory requirements) weren't directly tested at either interview — this reflects updated client feedback received after her interviews took place, not a gap in what she said, and is worth covering directly at final interview.</p>
+    </div>
+
+    <div class="card">
+      <h3>Dimension-by-Dimension Analysis — Combined Assessment</h3>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Financial Control, Payroll &amp; Budget Monitoring</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Confirmed and reinforced. The competency answer was, if anything, more thorough than the first interview's: P45/HMRC starter checklist handling, contract and salary input into Xero, correct treatment of a leaver's final leave-date and outstanding annual leave, and a proper clarifying question on the type of pension change before acting. She volunteered the payment-processing and HMRC submission steps unprompted after initially focusing on data entry, self-correcting mid-answer without being prompted. Consistently the strongest, most systematic dimension in her profile. Note: neither interview directly tested ongoing budget monitoring or her practical experience of specific financial controls (spending/authorisation limits, dual signatory requirements) — this reflects client feedback received after her interviews took place, not a gap in her answers, and is worth covering directly at final interview.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Budget Preparation, Annual Accounts &amp; Funder Reporting</span><span class="dim-score rag-amber">6.5 / 10 — AMBER</span></div>
+        <p>Meaningfully strengthened. Where the first interview established she has no practical experience preparing a budget or producing annual/management accounts, the competency answer showed a genuinely sophisticated conceptual grasp: building income conservatively, separating fixed overheads from variable costs, applying a 3% inflation adjustment and a 10% contingency buffer, and distinguishing restricted project income from general funds. She was also direct and specific about exactly what she does and doesn't do at her second role — she prepares supporting documents for the external accountant and runs restricted-fund usage reports, but does not produce management or annual accounts herself. Strong reasoning, still no hands-on track record — an honest, well-defined gap rather than a vague one.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">IT, Systems &amp; Procurement</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Confirmed at the same strong level as the first interview. The competency answer described a structured, sensible approach — audit what's currently in place and what isn't working, check existing subscriptions for value, gather three to four competing quotes, benchmark against the market, and involve senior leadership in the final decision rather than acting alone. This is consistent with her real first-interview evidence of comparing cyber insurance quotes and implementing a Salesforce data-quality fix that improved practitioner reporting accuracy roughly a hundredfold. The strongest, most evidence-backed IT profile of any candidate seen on this campaign.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Office &amp; People Administration</span><span class="dim-score rag-amber">5.75 / 10 — AMBER</span></div>
+        <p>Improved with more process maturity, though still without a lived example. Asked again directly, she gave a more developed answer than the first interview: an informal, supportive check-in exploring workload, training needs and personal circumstances, a structured four-to-five week follow-up cycle, and escalation to a formal process only after repeated cycles without improvement. Sound and humane, but — as the interviewer noted directly — still hypothetical rather than drawn from a real case.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Health &amp; Safety</span><span class="dim-score rag-amber">5.25 / 10 — AMBER</span></div>
+        <p>The most significant single movement in either candidate's profile. Given the same honest starting point (her employer is fully remote, so she has no physical H&amp;S experience), her competency answer was unexpectedly thorough: audit the existing policy against HSE guidance, close any gaps, verify staff training records, ensure postings are visible on-site and on the shared drive, review past incidents — and, notably, physically tour an office herself to confirm the paperwork matches reality on the ground. That last step shows real audit instinct rather than a checklist recited from memory. Still no direct hands-on experience, but a genuinely strong process answer that meaningfully closes the gap.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Data Protection &amp; Compliance</span><span class="dim-score rag-amber">6.75 / 10 — AMBER</span></div>
+        <p>Improved with a complete, correctly-sequenced answer. She named the right regulator specifically (report to the ICO), described contacting everyone affected, briefing senior leadership, auditing whether the existing policy was followed and why not if it wasn't, and rolling out data protection training for the whole team to prevent recurrence. A confident, professional, textbook-correct response.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">Autonomy, Judgement &amp; Decision-Making (Senior Cover)</span><span class="dim-score rag-amber">6.0 / 10 — AMBER</span></div>
+        <p>Meaningfully improved with a real example where the first interview had none. Asked again directly, she described a live incident: a freelance practitioner failed to show up for a scheduled paid online session, with no other senior staff available. She tried repeatedly to reach them, made the call to cancel and personally refund attendees, and — recognising no procedure existed for this scenario — prompted the team to create one afterwards, which was well received. A real, appropriately-scaled, well-handled example of solo judgement, a clear improvement on the generic answer given at first interview, even though she's honest that it wasn't a particularly high-stakes call.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Learning Agility / Capacity to Acquire New Skills Quickly</span><span class="dim-score rag-green">8.75 / 10 — GREEN</span></div>
+        <p>Already strong, and reinforced with an excellent example. Joining her employer with no finance background right before the December year-end, she had to learn QuickBooks quickly — a brief handover from the bookkeeper, then extensive self-directed learning through tutorials and videos. The standout detail: she noticed the team was reconciling the bank manually, identified that QuickBooks supported automatic bank feeds, checked appropriately with someone senior before changing anything given her inexperience at the time, and implemented it — cutting reconciliation time by roughly 90%. Not just learning under pressure, but proactively improving a process while still new. Arguably the single best answer across both of her interviews.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Values, Communication &amp; Culture Fit</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Confirmed with a current, concrete example on top of a genuinely compelling personal story. A volunteering trip to Myanmar prompted her to leave a seven-year clinical research career and move into charity work — a deliberate, costly choice that took a year of saving to absorb the pay cut, starting again at the bottom as an intern despite an existing master's degree and seniority elsewhere. At competency stage, when a direct report went on long-term sick leave, she personally absorbed their administrative workload for three to four weeks, triaged her own tasks to keep payroll on schedule, and lined up part-time colleagues as a contingency she ultimately didn't need to use.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Practical Fit &amp; Logistics</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>Confirmed with a clearer, more confident answer than at first interview. Asked directly how she'd feel being the only senior person on site and how many days she could commit, she was unambiguous: "I feel very comfortable... three days a week can do," and confirmed comfort with being on site more often during the first few months while she gets up to speed. She has already confirmed she would give notice at her second employer if offered this role. A clean, confident match to the role's stated requirement.</p>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="score">Combined Score: 73.5 / 100</div>
+      <p>Recommend advancing to client interview. Maryse improved more at competency stage than any other candidate on this campaign, particularly on health &amp; safety and autonomy. The remaining gaps — hands-on budget/annual accounts experience, a lived underperformance example, and direct testing of financial controls/authorisation limits — are honestly disclosed and worth covering at final interview rather than being treated as red lines.</p>
+    </div>
+
+    <div class="flags-grid">
+      <div class="flag-box red">
+        <h4>Red flags</h4>
+        <ul>
+          <li>No practical, hands-on experience preparing a budget, annual accounts, or physical health &amp; safety management — all three competency answers were well-reasoned but still hypothetical rather than demonstrated.</li>
+          <li>Performance management remains untested in practice — a sound process on paper, but she has never actually had to manage a live underperformance case.</li>
+          <li>Still holding two roles; would need to give notice at her second employer if offered this position (already confirmed she would).</li>
+          <li>Budget monitoring and financial controls (authorisation limits, dual signatory requirements) were not directly tested — reflects updated client feedback received after her interviews, not a gap in what she said. Recommend covering directly at final interview.</li>
+        </ul>
+      </div>
+      <div class="flag-box green">
+        <h4>Green flags</h4>
+        <ul>
+          <li>Health &amp; safety improved from the weakest dimension in either candidate's profile to a genuine amber — she described physically touring an office as a verification step, showing real audit instinct despite no hands-on experience.</li>
+          <li>Autonomy moved from the weakest-evidenced dimension in the first interview to a real, specific, well-handled example.</li>
+          <li>Learning agility is the standout data point in her whole profile — self-taught a new finance system under genuine pressure, then proactively improved the process (90% time saving) while still new.</li>
+          <li>IT/systems evidence remained consistently strong and specific across both interviews, backed by a real, independently-verified project.</li>
+          <li>On-site commitment is unambiguous and confident — three days, with flexibility to be in more during onboarding.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="rachel">
+    <div class="candidate-divider"></div>
+    <h2>Rachel Biggs</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Rachel Biggs</h3>
+        <div class="meta">Chief Executive, Cardiff Foodbank · 2023 – Present · Based in Cardiff</div>
+        <div class="meta"><strong>Final interview:</strong> 2:00pm, Thursday 10 September 2026</div>
+      </div>
+      <div class="score-pill">
+        <div class="num">81.3</div>
+        <div class="lbl">/ 100</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <p style="color:var(--muted); font-size:13px; margin-top:0;">Rachel completed one extensive first-stage screening call plus a further 1.5-hour follow-up meeting with me directly. Given the depth and seniority of evidence covered across both conversations, a formal competency interview was not required — these scores are final rather than a first-stage-only snapshot.</p>
+      <h3>Scoring</h3>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>Score</th><th>RAG</th><th>Weighted</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>8.5</td><td class="rag-green">GREEN</td><td>21.25</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>8.5</td><td class="rag-green">GREEN</td><td>8.50</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>8.0</td><td class="rag-green">GREEN</td><td>8.00</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>8.0</td><td class="rag-green">GREEN</td><td>8.00</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>7.5</td><td class="rag-green">GREEN</td><td>3.75</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>9.0</td><td class="rag-green">GREEN</td><td>2.70</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>8.0</td><td class="rag-green">GREEN</td><td>7.20</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>7.5</td><td class="rag-green">GREEN</td><td>11.25</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>7.5</td><td class="rag-green">GREEN</td><td>5.25</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>9.0</td><td class="rag-green">GREEN</td><td>5.40</td></tr>
+        <tr class="total-row"><td colspan="4">TOTAL WEIGHTED SCORE</td><td>81.3 / 100</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Assessment Summary</h3>
+      <p>Rachel is the strongest candidate assessed on this campaign. As a sitting charity CEO she brings genuine, sustained, senior-level evidence across almost every dimension of this role: full direct ownership of annual budgeting, management accounts and payroll; proactive, self-initiated financial governance (she instigated a Finance, Audit &amp; Risk subcommittee unprompted); standout, regulatorily fluent handling of a live data breach at third-party CRM provider Beacon; real day-to-day autonomy across finance, HR, operations and governance while running a budget grown from £451k to a £627k target; strong senior people-leadership over a team of 10 staff and 200+ volunteers; and genuine procurement/vendor-evaluation experience from leading the Beacon CRM sourcing project end-to-end, including the board business case.</p>
+      <p>Practical fit is fully resolved — she's Cardiff-based, comfortable with three days on site, and has clearly and voluntarily accepted a pay drop from her current £51.5k salary to around £45k. She was consistently honest rather than evasive about her own gaps, including not currently holding first aider or fire warden certification and not being able to quote H&amp;S legislation from memory — both straightforward, trainable gaps rather than competency concerns.</p>
+      <p>The one genuinely open question is not a skills gap but a dynamic one: moving from CEO to a subordinate role. This was raised repeatedly by the interviewer as the central thing to test directly at final interview — whether Rachel can take direction and act as a point of contact without escalating everything, coming from a role where she has been the final word for three years.</p>
+    </div>
+
+    <div class="card">
+      <h3>Dimension-by-Dimension Analysis</h3>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Financial Control, Payroll &amp; Budget Monitoring</span><span class="dim-score rag-green">8.5 / 10 — GREEN</span></div>
+        <p>Strong, concrete evidence covering both payroll process and financial controls. On payroll, she described her own hands-on monthly cycle in real detail — running absence reports from BreatheHR, sending new-starter details to the outsourced payroll provider, keeping her own spreadsheet to predict what tax, NI and pension figures should look like so she can flag discrepancies, cross-checking against the prior month, and personally approving each payslip line by line. She named a genuine segregation-of-duties control ("our protocols are that I don't set up my own salary") and gave a specific monthly timeline. On controls, she set out a layered authorisation structure — delegated income and expenditure limits, grants above 10% of the income target requiring treasurer sign-off, dual sign-off on reserves movements — and personally instigated a Finance, Audit &amp; Risk subcommittee unprompted ("I wanted the oversight, I invited the scrutiny").</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Budget Preparation, Annual Accounts &amp; Funder Reporting</span><span class="dim-score rag-green">8.5 / 10 — GREEN</span></div>
+        <p>Genuine, strong evidence on reflection. She builds the annual budget from scratch each year and reviews monthly management accounts directly — not delegated — while monitoring income and expenditure and growing the organisation's budget from £451k to a £627k target, working closely with the Treasurer. She leads audit preparation directly with external auditors and gave a specific, technically sound example — correct accrual/prepayment treatment for insurance and bus tickets spanning the year-end, plus gift aid treated as an accrual during a system transition. Process ownership here is genuinely full and direct, not partial or supervisory.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">IT, Systems &amp; Procurement</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Strong evidence, particularly on the procurement judgement this dimension is designed to test. She personally led the sourcing, evaluation and procurement of a new CRM system (Beacon) end-to-end — identifying the need, assessing cost, risk, benefit and compliance fit against the previous platform, and building and presenting the business case to the board. That is a genuine, direct demonstration of vendor evaluation and procurement judgement at senior level. She was candid that hands-on technical configuration is delegated to others — a normal division of labour at CEO level.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Office &amp; People Administration</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Strong, credible people-management experience at senior level. As Chief Executive she has led a staff team of 10 and over 200 volunteers for three years — genuine, sustained, senior people-leadership responsibility, not a delegated or junior function. The example she gave was well-structured: direct feedback, an accurate root-cause diagnosis (a confidence issue, not unwillingness), and a clear plan handing ownership back with agreed timescales.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Health &amp; Safety</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>Stronger than the raw transcript alone suggests. She was open that she doesn't currently hold first aider or fire warden certification, and admitted she couldn't quote H&amp;S legislation chapter and verse — a reasonable, honest answer rather than a knowledge or attitude gap. She demonstrated real conceptual understanding (talking through lone-working risk assessments for a new centre — manual handling, personal safety), has an H&amp;S policy under active review, and has an external H&amp;S consultant on retainer for technical expertise.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Data Protection &amp; Compliance</span><span class="dim-score rag-green">9.0 / 10 — GREEN</span></div>
+        <p>The standout answer of the interview. Using a live, ongoing incident — a data breach at third-party CRM provider Beacon — she demonstrated genuine regulatory fluency (citing the 72-hour ICO assessment window unprompted), procedural rigour (informing the board and DP trustee lead immediately, keeping a contemporaneous log of every action and rationale), and sound judgement under real pressure (reporting to the ICO, and to the Charity Commission as a precaution even where not strictly required, contacting affected individuals directly, and preparing crisis communications given press exposure risk elsewhere in the sector).</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Autonomy, Judgement &amp; Decision-Making (Senior Cover)</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Strong indirect evidence, even though the discrete question was skipped in this call. As Chief Executive for three years, she carries real, sustained, day-to-day autonomy across finance, HR, operations and governance — running a budget grown from £451k to a £627k target, deciding independently on community fundraising and expenditure within her own delegated limit, and escalating only the largest, highest-risk items to the Treasurer or board. A single, vivid "here's the moment I decided alone" story wasn't captured on this call and would still sharpen the picture, but the underlying evidence is strong.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Learning Agility / Capacity to Acquire New Skills Quickly</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>Not tested via a single dedicated question, but a consistent, credible pattern runs through the whole interview: she introduced BreatheHR ("made a massive difference for the team"), moved the organisation onto Xero, drove the evaluation and board case for a new CRM (Beacon), and has repeatedly identified process gaps and pushed change through her board. Real, if indirect, evidence of someone who picks up new systems and drives adoption rather than waiting to be told.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Values, Communication &amp; Culture Fit</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>No dedicated "tell me about a mistake" question was asked at this stage, but real values evidence surfaced anyway. Her instinct to invite scrutiny rather than avoid it — self-initiating the Finance, Audit &amp; Risk subcommittee, and her transparent handling of the Beacon data breach — shows the same underlying trait a mistake question is designed to test: surfacing problems and documenting decisions rather than concealing them. She was also candid rather than defensive about her own gaps when asked directly.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Practical Fit &amp; Logistics</span><span class="dim-score rag-green">9.0 / 10 — GREEN</span></div>
+        <p>Well resolved on the facts available. She lives and works in Cardiff, so the office-based days present no commute or relocation issue. Salary was resolved cleanly and early — she confirmed she's comfortable with roughly £45k against a current £51.5k salary, a real and voluntarily accepted pay cut, and she was self-aware about the seniority trade-off. Notice period and an upcoming ~10-day holiday were the only outstanding logistics, both routine at this stage.</p>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="score">Combined Score: 81.3 / 100 — VERY STRONG</div>
+      <p>Recommend advancing to final interview. The one genuinely open question is not a skills gap but a dynamic one — moving from CEO to a subordinate role — which was raised repeatedly during the process as the thing worth testing directly: whether Rachel can take direction and act as a point of contact without escalating everything, coming from a role where she has been the final word. That, plus formalising first aider/fire warden certification, are the only real open items before progressing.</p>
+    </div>
+
+    <div class="flags-grid">
+      <div class="flag-box red">
+        <h4>Red flags</h4>
+        <ul>
+          <li>Untested CEO-to-subordinate dynamic — the central open question: whether she can take direction and act as a point of contact without escalating everything, coming from a role where she was the final word.</li>
+          <li>Does not currently hold first aider or fire warden certification — a straightforward, trainable gap rather than a competency concern, but worth resolving before start.</li>
+        </ul>
+      </div>
+      <div class="flag-box green">
+        <h4>Green flags</h4>
+        <ul>
+          <li>Standout data protection evidence — handled a real, live third-party data breach with genuine regulatory fluency, contemporaneous documentation, and sound board-level judgement.</li>
+          <li>Self-initiated financial governance improvements — instigated a Finance, Audit &amp; Risk subcommittee unprompted.</li>
+          <li>Full, direct ownership of annual budget-setting and monthly management accounts while growing the organisation's budget from £451k to a £627k target.</li>
+          <li>Sustained, real senior autonomy — three years running finance, HR, operations and governance as CEO.</li>
+          <li>Strong people-management experience at senior level — 10 staff and 200+ volunteers led directly for three years.</li>
+          <li>Practical fit fully resolved — Cardiff-based, comfortable with three days on site and the pay drop to ~£45k.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CVs</h2>
+
+    <details open>
+      <summary>Curriculum Vitae — Rachel Biggs</summary>
+      <div class="doc-body"><strong>Rachel Biggs</strong>
+rachelbiggs01@yahoo.com · 07515 403 670
+
+<strong>Profile</strong>
+Having successfully led organisational change as Chief Executive of Cardiff Foodbank, I have gained a deeper understanding of where my skills, strengths and interests are best aligned. Whilst I have enjoyed the breadth and responsibility of CEO leadership, I am particularly energised by finance, governance, organisational development and enabling charities to operate effectively, compliantly and sustainably. The Business &amp; Finance Manager role at Headway Cardiff and South East Wales particularly appeals because it brings together these areas within a collaborative senior leadership team, supporting a well-respected local charity to improve outcomes for people affected by acquired brain injury and their families.
+
+I am an experienced charity leader with a strong track record in operational management, governance, finance oversight and organisational development. Skilled in supporting mission-led organisations to deliver sustainable impact through effective systems, collaborative leadership and strong stakeholder relationships, I have extensive experience working with boards, senior leaders, staff and volunteers to strengthen organisational performance, lead change and build organisational resilience.
+
+<strong>Key Skills</strong>
+Finance &amp; Budget Management · Audit Coordination &amp; Financial Reporting · Payroll Oversight &amp; HR Administration · Governance, Compliance &amp; Risk Management · Board and Trustee Engagement · Data Protection (DPO Lead) · Strategic Planning &amp; Change Management · Stakeholder &amp; Partnership Management · Facilitation, Coaching &amp; Leadership · Microsoft 365, SharePoint, CRM Systems &amp; Xero
+
+<strong>Career Summary and Key Responsibilities</strong>
+
+Chief Executive — Cardiff Foodbank | 2023 – Present
+Lead a local charity supporting over 19,000 people annually through a network of eight distribution centres and additional community delivery models, working with 10 staff, over 200 volunteers and a board of nine trustees.
+— Lead organisational strategy, governance, risk management, safeguarding, data protection and operational performance.
+— Develop and monitor annual organisational budgets (£451k income in 2025/26, increasing to a £627k income target in 2026/27), working closely with the Treasurer, trustees and external advisers to support financial sustainability and strategic growth.
+— Review monthly management accounts, monitor income and expenditure, oversee cashflow and reserves, and support investment decisions balancing organisational liquidity and financial sustainability.
+— Established a Finance Sub-Committee to strengthen financial governance and reporting.
+— Worked with the Treasurer to strengthen financial oversight arrangements, including reserves management, cashflow monitoring and investment decisions.
+— Produce quarterly financial and operational reports for trustees and support Board decision-making.
+— Lead preparation for annual audit, acting as primary liaison with external auditors and coordinating submission of audit evidence through the online Inflo system.
+— Draft Trustee Annual Report and support implementation of 2026 Charity SORPs reporting requirements.
+— Oversee payroll arrangements for 10 staff through an outsourced provider, including new starter processes, payroll authorisation, pension administration coordination and HMRC payments.
+— Lead organisational income generation, grant applications and grant monitoring.
+— Led implementation of a new CRM (Beacon) and strengthened organisational policies, including cyber security and data protection arrangements.
+— Represent the organisation externally with funders, partners, local decision-makers and the media to raise awareness and influence for change.
+
+Area Manager (South Wales) — Trussell | 2021 – 2023
+Supported trustees and managers across 18 independent food banks throughout South Wales.
+— Advised trustees and senior leaders on governance, strategic planning, income generation, financial sustainability, risk management and organisational development.
+— Supported trustees and managers through periods of growth, change and organisational challenge.
+— Facilitated strategic planning sessions and governance discussions.
+— Worked collaboratively with UK-wide departments to develop guidance, resources and operational improvements.
+— Contributed to anti-poverty networks and policy discussions across Wales.
+
+Director — Bushcraft Adventures | 2013 – 2023 (alongside employed roles)
+Owned and operated a successful outdoor learning and activities business.
+— Developed business plans and diversified income streams.
+— Managed finances, budgeting and financial planning.
+— Built and maintained website and marketing channels.
+— Managed customer relationships and business operations.
+— Served as Data Protection Lead.
+
+Volunteering Adviser (Wales and West Midlands) — Macmillan Cancer Support | 2011 – 2020
+Supported Macmillan teams and partner organisations to strengthen volunteer involvement across services.
+— Advised senior stakeholders on volunteer strategy and organisational development.
+— Led development of UK-wide volunteering policies, guidance and resources.
+— Managed complex stakeholder relationships across NHS, local authority and third sector partners.
+— Served as a volunteering complaints lead.
+— Contributed to the development of new services across Wales through business planning, stakeholder engagement and implementation support.
+
+Volunteer Coordinator — Cardiff Citizens Advice | 2009 – 2011
+— Developed and delivered the organisation's volunteering strategy.
+— Recruited, trained and supported approximately 100 volunteers.
+— Secured funding and developed volunteer infrastructure.
+— Supported service delivery through effective volunteer management.
+
+Partnerships Officer — C3SC (was VAC) | 2008 – 2009
+— Facilitated partnership working across Cardiff's Third Sector.
+— Supported collaborative projects and strategic networks.
+— Represented third sector organisations within multi-agency partnerships.
+
+<strong>Trustee, Board and Governance Experience</strong>
+
+Chair of Trustees / Trustee — Citizens Advice Bridgend County Borough | 2022 – 2025
+— Chaired Board meetings and supported organisational governance and strategic development.
+— Led efforts to strengthen relationships between trustees and the senior leadership team during a significant period of organisational change.
+— Contributed to the development of impact reporting, governance arrangements and organisational resilience.
+— Facilitated trustee discussions and decision-making relating to participation in the CASEW consortium of local Citizens Advice charities, resulting in the organisation joining the consortium.
+
+Other Previous Advisory Roles
+— Advisory support to Pontypridd Muni
+— Advisory support to Noah's Ark Children's Hospital for Wales volunteering programme
+— Advisory Board Member to Sustrans Cymru
+
+<strong>Selected Achievements</strong>
+Improved access to support at Cardiff Foodbank — led analysis of local food aid provision and community need, securing funding for a new mobile distribution model and developing partnerships with advice agencies to provide more holistic support; led the partnership and application between three charities to secure collaborative funding to provide financial advice within food bank centres.
+Strengthened governance at Citizens Advice Bridgend County Borough — as Chair of Trustees, supported improved trustee and senior leadership relationships and increased organisational resilience during a significant period of change.
+Strengthened financial governance and reporting at Cardiff Foodbank — established a Finance, Audit and Risk Sub-Committee, led audit preparation and developed trustee reporting processes.
+Influenced UK-wide policy change at Macmillan Cancer Support — led development of proposals resulting in adoption of Ban the Box recruitment practices.
+Developed partnership approaches and volunteer service delivery within health settings — worked across health, local authority and third sector partners to develop sustainable volunteer-led service models.
+
+<strong>Qualifications and Professional Development</strong>
+AgilePM Foundation (completed), Practitioner (in progress) · ILM Level 7 Certificate in Executive Coaching &amp; Mentoring · ILM Level 5 Certificate in Management of Volunteers · Effective Facilitation Skills (Agored Cymru/WCVA) · Ongoing professional development through ACEVO membership
+
+<strong>Education</strong>
+BSc (Hons) Management (Marketing), 2:1 — University of Manchester Institute of Science and Technology (UMIST)
+A Levels: 4 (Grades A-B) · GCSEs: 10 (Grades A*-B)
+
+<strong>Additional Information</strong>
+Full UK driving licence and access to a car · Welsh learner (beginner) with a commitment to continued development</div>
+    </details>
+
+    <details>
+      <summary>Curriculum Vitae — Lauran Jenkins</summary>
+      <div class="doc-body"><strong>Lauran Jenkins — Senior Operations &amp; Finance Manager | People, Governance &amp; Organisational Leadership</strong>
+South Wales · 07714 300734 · lauranjenkins@gmail.com
+
+<strong>Profile</strong>
+Senior operations and finance professional with more than 10 years' experience leading the operational infrastructure of charities, not-for-profits, start-ups and scale-ups. Experienced in managing finance, payroll, budgets, people operations, governance, compliance, systems and programme delivery within lean organisations where broad ownership and sound judgement are essential.
+
+Hands-on financial manager with responsibility for budgets of up to £1 million, monthly payroll, forecasting, bookkeeping, VAT, grant funding and audit preparation. Advanced user of Xero, including independently migrating three years of financial records from QuickBooks to Xero without external accounting support.
+
+Trusted senior leader with experience reporting to Boards, developing organisational policies, improving systems and processes, and translating strategic priorities into effective day-to-day operations. Equally comfortable working at a strategic level and getting into the operational detail needed to keep an organisation running smoothly.
+
+<strong>Core Expertise</strong>
+Operational Leadership · Financial Management &amp; Budgeting · Xero/QuickBooks/Sage 50 Accounting &amp; Payroll · Forecasting &amp; Financial Reporting · Payroll, PAYE &amp; National Insurance · Grant &amp; Project Budget Management · Audit Preparation &amp; External Accountant Liaison · HR &amp; People Operations · Governance, Risk &amp; Compliance · Policy Development · Systems Implementation &amp; Improvement · Data Protection &amp; Cybersecurity · Health &amp; Safety · Board Reporting · Stakeholder Management · Recruitment &amp; Performance Management
+
+<strong>Professional Experience</strong>
+
+Design Commission For Wales (DCFW)
+Office Manager | November 2025 – Present
+Lead organisational operations across finance, people, governance, compliance, systems and office management within a small national organisation, working closely with senior leadership and the Board.
+— Manage a £500k organisational budget, monitoring expenditure, cash flow and financial performance.
+— Run monthly payroll and associated PAYE and National Insurance processes.
+— Administer grant-funded activity and financial claims for projects exceeding £100k per quarter.
+— Solely manage the annual external audit, preparing financial schedules, supporting documentation and responding to auditor requests.
+— Manage HR administration including recruitment, onboarding, employee records, annual leave and employment processes.
+— Develop and maintain organisational policies covering HR, health &amp; safety, data protection, AI governance and cybersecurity.
+— Lead organisational risk assessments and health &amp; safety processes, including responsibilities as First Aider and Fire Marshal.
+— Support Board meetings and governance activity through accurate operational and financial information.
+— Manage suppliers, office arrangements and contracts, identifying opportunities to improve efficiency and resilience.
+— Lead operational systems improvements across finance, administration and organisational processes.
+
+techSPARK
+Operations Manager | July 2022 – November 2025
+Senior operations leader within a technology growth not-for-profit network, responsible for finance, people, governance and organisational delivery.
+— Managed annual organisational budgets in excess of £1 million.
+— Produced monthly financial reports, forecasts and budget updates for senior leadership and the Board.
+— Owned the full financial cycle including budgeting, forecasting, bookkeeping, VAT returns and payroll.
+— Managed payroll for a team of up to 15 employees/contractors.
+— Led recruitment, onboarding, performance reviews and personal development planning.
+— Developed internal policies and governance processes to support organisational growth.
+— Worked directly with external accountants on statutory compliance and year-end requirements.
+— Led operational delivery for flagship technology events, including a five-day technology festival and events attracting 450+ attendees.
+— Supported the organisation's strategic growth through effective systems, people and financial management.
+
+HdE GROUP
+Operations &amp; Finance Manager | July 2022 – November 2025
+Operations and finance lead within a growing digital marketing agency.
+— Managed annual budgets of approximately £800k.
+— Owned the full finance function including payroll, bookkeeping, forecasting, VAT and budget monitoring.
+— Independently migrated three years of financial records from QuickBooks to Xero, completing the full transition without external accounting support.
+— Built finance and administration systems to improve reporting accuracy and day-to-day efficiency.
+— Developed HR policies, compliance processes and operational infrastructure to support business growth.
+— Supported recruitment, onboarding and cross-functional business planning.
+
+BE Offices
+Assistant Centre Manager | January 2021 – January 2022
+— Managed tenant relationships, renewals and contract compliance within a busy serviced-office environment.
+— Delivered high-quality client service and supported community-building through events and engagement.
+— Supported commercial growth through proactive relationship management and sales activity.
+
+NewKey
+Office &amp; Operations Manager | January 2020 – January 2021
+Managed day-to-day office and operational activity, supporting internal systems, people and business administration.
+
+BRAND Energy
+Operations Manager – Shutdown Projects | January 2019 – January 2020
+— Coordinated labour, logistics and operational delivery for large-scale Tata Steel shutdown projects.
+— Managed travel, accommodation, safety and project compliance requirements.
+— Liaised with stakeholders and suppliers to support the delivery of complex, time-critical projects.
+
+CHERISH CARE HOMES
+Payroll &amp; Operations Manager (Apprenticeship) | January 2011 – January 2015
+— Managed payroll and HR administration for 65+ care staff.
+— Coordinated rotas and day-to-day operational requirements.
+— Acted as a first point of contact for staff and operational queries.
+— Built foundational expertise across payroll, HR, finance and organisational coordination.
+
+<strong>Education &amp; Professional Development</strong>
+CIPD Level 5 Diploma in People Management — In Progress
+Level 3 Diploma in Business Administration — 2010
+
+<strong>Additional Information</strong>
+Advanced Xero user · Full UK driving licence · Access to a vehicle</div>
+    </details>
+
+    <details>
+      <summary>Curriculum Vitae — Maryse Degbegni</summary>
+      <div class="doc-body"><strong>Maryse Degbegni — Operations Manager &amp; Accounts Officer</strong>
+Cheltenham, UK · 07865 421493 · maryse_degbegni@yahoo.com · Right to Work in the UK
+
+<strong>Profile</strong>
+Experienced finance operations professional with a track record in the charity, non-profit, and clinical research sectors. Highly organised, proactive, and comfortable managing multiple priorities across different entities while meeting tight deadlines. Values clean records, reliable delivery, clear communication, and attention to detail.
+
+<strong>Skills</strong>
+Operations management · Finance administration and bookkeeping · Payroll, pensions and Gift Aid · Budgeting and financial reporting · Salesforce CRM development · Policy and procedure writing · Line and volunteer management · HR administration · Stakeholder and supplier management · Training and mentoring · Cross-cultural collaboration and team performance
+
+<strong>IT / Systems</strong>
+QuickBooks, Salesforce, Enthuse, Microsoft Word, Excel, PowerPoint, Outlook, Teams, SharePoint, OneDrive, CTMS, eTMF, WordPress, Adobe Acrobat, iCloud, Zoom, Canva and Breathe HR.
+
+<strong>Work Experience</strong>
+
+Operations Manager — Soundabout, UK | August 2021 – Present
+— Lead operations, finance, cybersecurity, HR, H&amp;S, compliance and administration for a non-profit, driving process improvements and organisational development.
+— Drive organisation-wide Salesforce CRM improvements, enhancing data management, reporting and workflows.
+— Manage end-to-end finance functions, including payroll, restricted/unrestricted income, and Gift Aid administration.
+— Oversee full HR lifecycle: recruitment, onboarding, DBS/right-to-work checks, and training coordination.
+— Line manage staff and volunteers, developed operational policies, and negotiated vendor contracts to maximise value.
+
+Accounts Officer — Newbigin Community Trust, UK | November 2022 – Present
+— Maintain financial records in QuickBooks, processing invoices, payments, expenses and transactions.
+— Run monthly payroll and pension administration; submit Gift Aid claims to HMRC.
+— Draft budgets and prepare monthly financial reports for the CEO.
+
+Business and Project Administrator — Soundabout, UK | February 2019 – August 2021
+— Managed day-to-day finance administration in QuickBooks, ensuring timely payments and accurate records.
+— Produced cash flow reports and supported grant, donation and Gift Aid tracking.
+— Line managed an Admin Intern and maintained GDPR-compliant processes throughout.
+
+Programme Officer Intern — Soundabout, UK | September 2019 – February 2020
+— Maintained Salesforce records and supported data accuracy.
+— Provided administrative support to programme delivery and liaised with internal and external stakeholders.
+— Supported evaluation and monitoring activity.
+
+Clinical Research Associate II–III — PRA, UK | June 2012 – September 2019
+— Implemented and monitored multi-site clinical trials, ensuring compliance with ICH-GCP and regulatory requirements.
+— Reviewed and verified clinical data collected onsite and remotely; assessed monitoring trip reports.
+— Managed site relationships and coordinated communication across sponsors, vendors and hospital teams.
+— Supported junior staff through guidance and mentoring; partnered with Clinical Trial Managers on UK and European trial operations.
+
+Clinical Research Associate I–II — Pharmanet, UK &amp; France | June 2012 – September 2019
+— Conducted monitoring and training visits at investigator sites, with approximately 40-50% travel.
+— Supported GCP compliance in line with company SOPs and sponsor guidelines.
+— Maintained study-specific tracking spreadsheets including patient enrolment, regulatory documents and site visits.
+
+<strong>Volunteering Experience</strong>
+
+Outreach Ambassador and Mentor — FairFight, Remote (Zambia &amp; Zimbabwe) | September 2020 – Present
+— Mentor to a Zimbabwean young adult living in Zambia, providing general advice, emotional and academic support.
+— Develop and strengthen strategic relationships with partners, sponsors and donors.
+— Coordinate events and other opportunities to raise awareness, boost donations, and engage supporters.
+— Previously coordinated mentors until April 2022, liaising with Zimbabwean partners and American/European mentors.
+
+Local Volunteer — Oxfam, UK | October 2015 – December 2025
+— Supported retail operations including till management, stock checking, merchandising, restocking, customer service and Gift Aid donation processing.
+
+International Volunteering — Myanmar &amp; Peru | 2017 – 2018
+— Volunteered in Yangon, Myanmar, supporting alms, patient care, village project work and physiotherapy activities.
+— Taught English and French in a primary school and to adult students in Salaverry, Peru.
+
+<strong>Education</strong>
+Speciality in the Development of Health Products, University Paris Diderot
+MSc Biochemistry, University Paris Diderot
+BSc Biochemistry, University Paris Diderot
+
+<strong>Certifications</strong>
+AAT Level 2 (currently finishing AAT Level 3) · Mental Health First Aider · Emergency First Aid at Work
+
+<strong>Courses</strong>
+How to master strategic planning in the non-profit sector · H&amp;S for Managers · Safer Recruitment · Advanced Project Management · Financial Resilience, Clore Social Leadership, Clore Fellow · Safeguarding Level 2 · Managing in the Humanitarian Sector
+
+<strong>Additional Strengths</strong>
+Member of an Equity, Diversity, Inclusion and Belonging group · Effective independently, remotely and as part of a team · Strong organisational and time management skills · Experienced across charity, healthcare, research and international volunteering contexts
+
+<strong>Languages</strong>
+English: Fluent · French: Fluent · Spanish: Intermediate · Japanese: Beginner (self-learner)</div>
+    </details>
+  </section>
+
+  <section id="exploration">
+    <h2>Interview Guidance — Areas for Exploration</h2>
+    <div class="card">
+      <p>Suggested areas worth exploring with each candidate at final interview, based on the assessment conducted through the process so far. These are intended as prompts, not prescriptions — each may address some of these proactively, or respond in ways that alter the picture. The assessment is yours to make.</p>
+
+      <h3>Rachel Biggs</h3>
+      <table>
+        <tr><th style="width:20%;">Area</th><th style="width:40%;">Suggested to explore</th><th style="width:40%;">What to listen for</th></tr>
+        <tr>
+          <td><strong>CEO-to-subordinate dynamic</strong></td>
+          <td>"This role reports into Rebecca, not the other way round. Talk me through a time you had to take direction on something you'd have handled differently yourself — how did that actually feel, and what did you do?"</td>
+          <td>Genuine self-awareness about the shift, not just a rehearsed reassurance.</td>
+        </tr>
+        <tr>
+          <td><strong>Autonomy, rounding out the picture</strong></td>
+          <td>"Give me one specific, memorable time you made a big call alone as CEO — what was it, and how did you decide?"</td>
+          <td>A vivid, specific story to sit alongside the strong pattern evidence already on record.</td>
+        </tr>
+        <tr>
+          <td><strong>Performance management</strong></td>
+          <td>"Give me the harder example — a genuine formal performance management case, not the smaller one. What did you actually say, and how did it end?"</td>
+          <td>A higher-stakes example than the one already given, to fully round out this dimension.</td>
+        </tr>
+        <tr>
+          <td><strong>Health &amp; safety certification</strong></td>
+          <td>"This role carries fire warden and first aider duties directly — how quickly could you get formally certified in both if you started?"</td>
+          <td>A concrete, practical plan rather than a vague assurance.</td>
+        </tr>
+      </table>
+
+      <h3>Lauran Jenkins</h3>
+      <table>
+        <tr><th style="width:20%;">Area</th><th style="width:40%;">Suggested to explore</th><th style="width:40%;">What to listen for</th></tr>
+        <tr>
+          <td><strong>People management</strong></td>
+          <td>No concrete underperformance-management example given at either interview, despite being asked twice — worth a direct, specific prompt on a real situation she's handled.</td>
+          <td>A genuine, specific case rather than a further hypothetical or generic process description.</td>
+        </tr>
+        <tr>
+          <td><strong>Financial control cover</strong></td>
+          <td>She is currently the sole authoriser of payments and bank access at her employer. Worth a practical conversation about how a second signatory or cover arrangement would work at Headway.</td>
+          <td>Her own thinking on segregation of duties and cover — not a skills gap, but worth exploring how she'd help design it here.</td>
+        </tr>
+        <tr>
+          <td><strong>Budget preparation &amp; funder reporting</strong></td>
+          <td>The annual accounts and funder-reporting elements of budget preparation weren't addressed at competency stage despite being asked. Worth walking through directly.</td>
+          <td>Sound structured thinking about restricted funds, SORP and funder-specific formats.</td>
+        </tr>
+      </table>
+
+      <h3>Maryse Degbegni</h3>
+      <table>
+        <tr><th style="width:20%;">Area</th><th style="width:40%;">Suggested to explore</th><th style="width:40%;">What to listen for</th></tr>
+        <tr>
+          <td><strong>Budget monitoring &amp; financial controls</strong></td>
+          <td>Not directly tested at either interview stage (this reflects updated client feedback given after her interviews). Worth a direct scenario on authorisation limits and how she'd track actual spend against budget month to month.</td>
+          <td>Concrete, practical thinking rather than a repeat of her already-strong payroll answer.</td>
+        </tr>
+        <tr>
+          <td><strong>Annual accounts &amp; budget preparation</strong></td>
+          <td>No hands-on experience — both employers sit under the audit threshold. Worth probing how she'd approach year one in practice.</td>
+          <td>Self-awareness about the learning curve, building on the sound conceptual answer already given at competency stage.</td>
+        </tr>
+        <tr>
+          <td><strong>Managing underperformance</strong></td>
+          <td>Still untested in practice — a sound process on paper but no lived example after two opportunities to test it.</td>
+          <td>Honesty about the gap rather than an attempt to imply more direct experience than she has.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="footer-note">Raise + Recruit · raiseandrecruit.org.uk · john@raiseandrecruit.org.uk</div>
+
+</div>
+</body>
+</html>
