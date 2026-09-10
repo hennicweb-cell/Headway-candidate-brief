@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Business & Finance Manager — Candidate Report | Headway</title>
+<style>
+  :root{
+    --darkteal:#0F2D35;
+    --teal:#3F9588;
+    --mint:#E3F6F4;
+    --paleGreen:#D9F4E3;
+    --paleAmber:#FFF2CF;
+    --paleRed:#FBDCE1;
+    --textGreen:#1E7B34;
+    --textAmber:#8A6D1D;
+    --textRed:#B3261E;
+    --greyRow:#F7F7F7;
+    --ink:#1C2B2E;
+    --muted:#5B6E70;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; padding:0;
+    font-family:Calibri, "Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+    background:#FAFAF9;
+    line-height:1.55;
+  }
+  .wrap{max-width:920px; margin:0 auto; padding:0 24px 80px;}
+  header.hero{background:var(--darkteal); color:#fff; padding:44px 24px 32px;}
+  header.hero .wrap{padding:0;}
+  nav{display:flex; gap:18px; flex-wrap:wrap; margin-top:18px;}
+  nav a{color:#CFE9E4; text-decoration:none; font-size:13px; border-bottom:1px solid transparent;}
+  nav a:hover{border-color:var(--teal);}
+  .eyebrow{text-transform:uppercase; letter-spacing:.12em; font-size:12px; color:var(--teal); font-weight:700; margin-bottom:10px;}
+  h1{font-family:Cambria, Georgia, serif; font-size:30px; margin:0 0 6px; font-weight:700; line-height:1.2;}
+  .role-line{font-size:15px; color:#CFE9E4;}
+  section{padding:36px 0; border-bottom:1px solid #E7E3DC;}
+  section:last-of-type{border-bottom:none;}
+  h2{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:21px; margin:0 0 16px;}
+  h3{font-family:Cambria, Georgia, serif; color:var(--darkteal); font-size:17px; margin:20px 0 8px;}
+  .card{background:#fff; border:1px solid #E7E3DC; border-radius:10px; padding:20px 22px; margin-bottom:14px;}
+  table{width:100%; border-collapse:collapse; font-size:13.5px; margin:10px 0;}
+  th, td{text-align:left; padding:8px 10px; border-bottom:1px solid #E7E3DC; vertical-align:top;}
+  th{background:var(--darkteal); color:#fff; font-weight:600; font-size:12.5px;}
+  tr:nth-child(even) td{background:var(--greyRow);}
+  .rag-green{color:var(--textGreen); font-weight:700;}
+  .rag-amber{color:var(--textAmber); font-weight:700;}
+  .rag-red{color:var(--textRed); font-weight:700;}
+  .total-row td{font-weight:700; background:var(--mint) !important; border-top:2px solid var(--teal);}
+  .verdict-box{background:var(--darkteal); color:#fff; border-radius:10px; padding:22px 24px; margin:16px 0;}
+  .verdict-box .score{font-family:Cambria, Georgia, serif; font-size:24px; color:#fff; margin-bottom:8px;}
+  .verdict-box p{color:#DCEDE9; margin:8px 0 0;}
+  .flags-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;}
+  @media (max-width:640px){.flags-grid{grid-template-columns:1fr;}}
+  .flag-box{border-radius:10px; padding:16px 18px; font-size:13.5px;}
+  .flag-box.red{background:var(--paleRed); border-left:4px solid var(--textRed);}
+  .flag-box.green{background:var(--paleGreen); border-left:4px solid var(--textGreen);}
+  .flag-box h4{margin:0 0 8px; font-size:13px; text-transform:uppercase; letter-spacing:.03em;}
+  .flag-box.red h4{color:var(--textRed);}
+  .flag-box.green h4{color:var(--textGreen);}
+  .flag-box ul{margin:0; padding-left:18px;}
+  .flag-box li{margin-bottom:8px;}
+  details{background:#fff; border:1px solid #E7E3DC; border-radius:10px; margin-bottom:14px; overflow:hidden;}
+  summary{cursor:pointer; padding:14px 20px; font-family:Cambria, Georgia, serif; font-size:16px; color:var(--darkteal); font-weight:700; background:var(--mint); list-style:none; display:flex; justify-content:space-between; align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+"; font-size:20px; color:var(--teal);}
+  details[open] summary::after{content:"–";}
+  .doc-body{padding:18px 22px; font-size:13.5px; white-space:pre-wrap; font-family:Calibri, Arial, sans-serif; color:var(--ink);}
+  .doc-body strong{color:var(--darkteal);}
+  .note-box{background:var(--mint); border-radius:8px; padding:14px 16px; font-size:13.5px; color:var(--darkteal); margin-bottom:16px;}
+  .profile-header{background:var(--mint); border-radius:10px; padding:20px 22px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;}
+  .profile-header h3{margin:0 0 4px; font-size:20px;}
+  .profile-header .meta{color:var(--muted); font-size:13px;}
+  .score-pill{background:var(--darkteal); color:#fff; border-radius:10px; padding:10px 18px; text-align:center; min-width:100px;}
+  .score-pill .num{font-family:Cambria, Georgia, serif; font-size:26px; font-weight:700;}
+  .score-pill .lbl{font-size:11px; text-transform:uppercase; letter-spacing:.04em; color:#CFE9E4;}
+  .footer-note{text-align:center; color:var(--muted); font-size:12px; padding:30px 0 0;}
+  .dim-card{border-radius:8px; padding:14px 18px; margin-bottom:10px; background:var(--greyRow); border-left:4px solid var(--teal);}
+  .dim-card.green{border-left-color:var(--textGreen);}
+  .dim-card.amber{border-left-color:var(--textAmber);}
+  .dim-card.red{border-left-color:var(--textRed);}
+  .dim-card .dim-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:6px; flex-wrap:wrap; gap:8px;}
+  .dim-card .dim-name{font-weight:700; color:var(--darkteal); font-size:14px;}
+  .dim-card .dim-score{font-weight:700; font-size:13px;}
+  .dim-card p{margin:0; font-size:13.5px;}
+  .q-tag{display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.03em; padding:2px 8px; border-radius:10px; background:var(--mint); color:var(--darkteal); margin-right:8px;}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Raise + Recruit · Candidate Report</div>
+    <h1>Business &amp; Finance Manager</h1>
+    <div class="role-line">Headway Cardiff and South East Wales · Final interview: 10:00am, Monday 14 September 2026</div>
+    <nav>
+      <a href="#framework">Assessment Framework</a>
+      <a href="#candidate">Candidate — Holly Savage</a>
+      <a href="#cv">CV</a>
+      <a href="#exploration">Interview Guidance</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section>
+    <div class="note-box">
+      This report covers Holly Savage, a late-arriving candidate who has now completed the full recruitment process — CV review, first interview and structured competency interview, both conducted on 9 September 2026 — and is recommended to progress to final interview with you and Lisa at 10:00am, Monday 14 September 2026. Her CV and full scorecard are included below.
+    </div>
+  </section>
+
+  <section id="framework">
+    <h2>Assessment Framework &amp; Important Notes</h2>
+    <div class="card">
+      <h3>Please read before reviewing scores</h3>
+      <p>The assessment, scores and commentary in this report represent my interpretation of Holly's performance across CV review, first interview and structured competency interview. It is not a definitive assessment of her capability or potential.</p>
+      <p>Scores are based on specific evidence gathered through the process — her written application, her responses to the questions asked at first interview, and her responses to the structured competency questions. She may perform differently in person, under different conditions, or when responding to your own questions framed in a way that suits her communication style.</p>
+      <p>This report is intended as a guide to inform your own assessment at interview — not as a final verdict. The scores and commentary should prompt lines of enquiry, not close them down. The final assessment and hiring decision rests entirely with you and Lisa.</p>
+      <h3>How scores are calculated</h3>
+      <p>Holly is assessed across the ten dimensions of the agreed scoring framework, each weighted according to the priorities you set out. A score out of 10 is given per dimension, multiplied by the weighting to produce a weighted score. The total is out of 100. Where a dimension was tested at both first and competency interview, the final score is a straight average of the two. Her Data Protection &amp; Compliance and Practical Fit &amp; Logistics dimensions were not re-tested at competency stage, so the first-interview scores stand alone per the agreed methodology.</p>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>What it measures</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>Day-to-day ownership of payroll, accounts and financial controls</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>Building a budget from scratch, annual accounts and funder-facing reporting</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>Managing and procuring IT, accountancy and office systems</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>HR processes, staff administration and day-to-day people management</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>Noticing and actioning risk, fire evacuation knowledge — a live, daily part of the role</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>DPO responsibilities and GDPR compliance</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>Ability to make sound calls independently and cover senior absence</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>Speed and confidence picking up new systems and processes</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>Practical, people-focused evidence of values in action</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>On-site availability, commute and commitment</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section id="candidate">
+    <h2>Holly Savage</h2>
+    <div class="profile-header">
+      <div>
+        <h3>Holly Savage</h3>
+        <div class="meta">Finance Manager (deputising for CEO), Cardiff &amp; Vale Credit Union · July 2024 – Present · Based in Merthyr Tydfil, South Wales</div>
+      </div>
+      <div class="score-pill">
+        <div class="num">78.9</div>
+        <div class="lbl">/ 100</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Combined Scoring — First Interview + Competency Interview</h3>
+      <table>
+        <tr><th>Dimension</th><th>Weight</th><th>1st Intw</th><th>Comp.</th><th>Final</th><th>RAG</th><th>Weighted</th></tr>
+        <tr><td>Financial Control, Payroll &amp; Budget Monitoring</td><td>25%</td><td>8.5</td><td>8</td><td>8.25</td><td class="rag-green">GREEN</td><td>20.63</td></tr>
+        <tr><td>Budget Preparation, Annual Accounts &amp; Funder Reporting</td><td>10%</td><td>7.5</td><td>8</td><td>7.75</td><td class="rag-green">GREEN</td><td>7.75</td></tr>
+        <tr><td>IT, Systems &amp; Procurement</td><td>10%</td><td>6</td><td>7</td><td>6.5</td><td class="rag-amber">AMBER</td><td>6.50</td></tr>
+        <tr><td>Office &amp; People Administration</td><td>10%</td><td>8</td><td>7</td><td>7.5</td><td class="rag-green">GREEN</td><td>7.50</td></tr>
+        <tr><td>Health &amp; Safety</td><td>5%</td><td>7.5</td><td>8.5</td><td>8.0</td><td class="rag-green">GREEN</td><td>4.00</td></tr>
+        <tr><td>Data Protection &amp; Compliance</td><td>3%</td><td>7.5</td><td>not re-tested</td><td>7.5</td><td class="rag-green">GREEN</td><td>2.25</td></tr>
+        <tr><td>Autonomy, Judgement &amp; Decision-Making (Senior Cover)</td><td>9%</td><td>8</td><td>7.5</td><td>7.75</td><td class="rag-green">GREEN</td><td>6.98</td></tr>
+        <tr><td>Learning Agility / Capacity to Acquire New Skills Quickly</td><td>15%</td><td>8.5</td><td>8.5</td><td>8.5</td><td class="rag-green">GREEN</td><td>12.75</td></tr>
+        <tr><td>Values, Communication &amp; Culture Fit</td><td>7%</td><td>7.5</td><td>9</td><td>8.25</td><td class="rag-green">GREEN</td><td>5.78</td></tr>
+        <tr><td>Practical Fit &amp; Logistics</td><td>6%</td><td>8</td><td>not re-tested</td><td>8.0</td><td class="rag-green">GREEN</td><td>4.80</td></tr>
+        <tr class="total-row"><td colspan="6">TOTAL WEIGHTED SCORE</td><td>78.9 / 100</td></tr>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Assessment Summary</h3>
+      <p>Holly's profile is defined by genuinely resilient financial control and integrity evidence, forged under difficult real circumstances. She inherited her current role in the middle of an undisclosed fraud investigation with no handover, and personally designed a real, working dual-control payment process in response — her finance officer completes bank reconciliations on paper, independently cross-checked by her, alongside role-based bank access limits and second-manager sign-off. Her account of making investment decisions and leading board meetings alone while deputising for her CEO is direct, specific and consistent across both interviews.</p>
+      <p>Her people-management evidence is the richest of any candidate assessed so far. She gave a genuine, sensitive account of rebuilding a colleague's confidence after he discovered the underlying fraud, and handled a difficult grievance investigation into her own CEO appropriately, escalating correctly rather than acting alone. Her best answer of either interview was on ownership and integrity: a roughly £30,000 tax payment went out three days late after a direct debit silently failed to set up, and she disclosed it to her CEO immediately and unprompted, took full responsibility without deflecting, and corrected it the same day.</p>
+      <p>IT and systems remain her comparatively weakest area — she was honest that she has never built a formal system or reporting tool beyond Excel, and the specific IT-contract negotiation question at competency stage wasn't something she'd done. A small number of competency answers (people management, autonomy) reused or left in-progress evidence rather than fresh, closed examples — though this looks more like honest, unpolished answering under pressure than a genuine gap; she was candid, unprompted, that she felt she'd rambled and hadn't delivered her best in the competency interview.</p>
+    </div>
+
+    <div class="card">
+      <h3>Dimension-by-Dimension Analysis — Combined Assessment</h3>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Financial Control, Payroll &amp; Budget Monitoring</span><span class="dim-score rag-green">8.25 / 10 — GREEN</span></div>
+        <p>Confirmed and further strengthened at competency stage. The payroll answer was clear and correctly sequenced — new starter added first with full onboarding detail gathered up front (ID, NI number, bank details), leaver processed with a P45, and pension changes handled individually. The financial controls answer was her strongest of the session: a real, working dual-control process she designed herself — her finance officer completes the morning bank reconciliation on paper (tamper-proof, then scanned and saved), which she independently reconciles against, on top of role-based bank access limits and a second-manager payment sign-off. This directly answers the sole-authoriser concern raised for other candidates — she has, in practice, already built a genuine segregation-of-duties structure.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Budget Preparation, Annual Accounts &amp; Funder Reporting</span><span class="dim-score rag-green">7.75 / 10 — GREEN</span></div>
+        <p>A strong, current answer. She runs a live monthly P&amp;L, balance sheet and budget-tracking tab, comparing actual to budget side by side and adjusting the year's forecast accordingly, with variances flagged for the board and CEO. She was, at the time of interview, literally mid-build on next year's budget, and described a realistic, evidence-led approach — factoring in a genuine current headwind (a declining loan book tied to cost-of-living pressure) and active cost control already taken, rather than an aspirational figure.</p>
+      </div>
+
+      <div class="dim-card amber">
+        <div class="dim-head"><span class="dim-name">IT, Systems &amp; Procurement</span><span class="dim-score rag-amber">6.5 / 10 — AMBER</span></div>
+        <p>A more modest answer, and the specific scenario asked — negotiating an IT support contract — wasn't something she had direct experience of, which she was honest about ("I don't think I've actually answered your question"). Real, transferable evidence followed: renegotiating a credit-checking software contract after a steep price rise, and a live, ongoing dispute with a building contractor where she is checking a completed-works report line by line against the original quote. Genuine scrutiny and negotiation instinct, but remains her comparatively weakest dimension across both interviews.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Office &amp; People Administration</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>The richest dimension in her profile overall, though the competency answer itself was still a work in progress rather than a closed story. She gave a genuine, still-unfolding example — a team member doing minimal work, with a fact-finding meeting already arranged before assuming laziness — and a culturally aware read of a second colleague's tendency to say "yes boss" rather than admit he hasn't understood. Combined with the first interview's detailed, sensitive account of rebuilding a traumatised colleague's confidence after the fraud discovery, this remains a genuine, well-evidenced strength.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Health &amp; Safety</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Strengthened at competency stage with a genuinely structured, specific first-week answer — checking fire extinguishers are in date and assessed, confirming evacuation meeting points, checking whether a check-in/check-out system exists to support an accurate evacuation headcount, and confirming fire exit signage and compliance, with an explicit commitment to act immediately on any risk spotted. Consistent with the first interview's real example of commissioning a building survey and retiring a damp floor on her own initiative.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Data Protection &amp; Compliance</span><span class="dim-score rag-green">7.5 / 10 — GREEN</span></div>
+        <p>Not re-tested at competency stage — no dedicated or off-script data protection question was put to her in this session, so the first-interview score stands alone. That evidence was a real, well-handled incident (a misdirected member letter, resolved by personally contacting both affected members) rather than policy language alone.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Autonomy, Judgement &amp; Decision-Making (Senior Cover)</span><span class="dim-score rag-green">7.75 / 10 — GREEN</span></div>
+        <p>A genuinely difficult, high-stakes example, reused from the first interview (the CEO grievance investigation) but with real additional reflection this time — she was candid that, looking back, she felt uncomfortable with parts of how she handled and delivered it, a mature, self-critical addition rather than a simple repeat. As with other candidates who have reused a single incident across both interviews, it should be read as one strong story doing double duty rather than two independent confirmations.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Learning Agility / Capacity to Acquire New Skills Quickly</span><span class="dim-score rag-green">8.5 / 10 — GREEN</span></div>
+        <p>A standout, spontaneous answer, fully consistent with the strong first-interview pattern evidence. Thrown into the credit union's unfamiliar Progress Banking system with zero training and zero handover, at the same time as a live fraud investigation and no laptop for her first few days, she taught herself by running and printing every report she could find, deliberately prioritising the back-office/general ledger side first because that's what the situation actually demanded.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Values, Communication &amp; Culture Fit</span><span class="dim-score rag-green">8.25 / 10 — GREEN</span></div>
+        <p>Her best answer of either interview, and arguably the standout answer of the whole process. A genuinely high-stakes mistake — a roughly £30,000 tax payment went out three days late after a direct debit silently failed to set up — disclosed immediately and directly to her CEO without prompting or softening ("regardless, it's my fault"), paid straight away, HMRC informed, and a corrected direct debit put in place. She also closed the competency interview with a candid, self-critical reflection on her own performance — consistent, genuine self-awareness rather than false confidence.</p>
+      </div>
+
+      <div class="dim-card green">
+        <div class="dim-head"><span class="dim-name">Practical Fit &amp; Logistics</span><span class="dim-score rag-green">8.0 / 10 — GREEN</span></div>
+        <p>Not re-tested at competency stage — logistics weren't revisited in this session, so the first-interview position stands: a minimum £40k salary (against a current £36k), four weeks' notice, and a confirmed, already-familiar Cardiff commute from Merthyr Tydfil. One scheduling note: she has a hospital appointment (a minor, non-urgent procedure) on the afternoon of Monday 14 September — the 10:00am interview slot works well around this.</p>
+      </div>
+    </div>
+
+    <div class="verdict-box">
+      <div class="score">Combined Score: 78.9 / 100</div>
+      <p>Recommend advancing to client interview. Holly is a strong, resilient candidate who effectively rebuilt a finance function's controls — and a colleague's confidence — after inheriting a live fraud investigation with zero handover. IT/systems is worth probing further at final interview, along with a fresh (rather than reused) example on autonomy and a closed, resolved people-management story rather than the in-progress one given at competency stage.</p>
+    </div>
+
+    <div class="flags-grid">
+      <div class="flag-box red">
+        <h4>Red flags</h4>
+        <ul>
+          <li>IT/systems remains her comparatively weakest dimension across both interviews — no verified technical project, and the specific IT-contract scenario wasn't something she'd done.</li>
+          <li>The underperformance-management example given at competency stage is still in progress rather than a closed, resolved story.</li>
+          <li>The autonomy example was reused from the first interview rather than freshly demonstrated at competency stage.</li>
+          <li>Data protection and flexible/home working weren't re-tested at competency stage, so those scores rest on first-interview evidence alone.</li>
+        </ul>
+      </div>
+      <div class="flag-box green">
+        <h4>Green flags</h4>
+        <ul>
+          <li>Standout integrity answer — immediate, unprompted disclosure of a genuinely high-stakes (£30k) mistake, paid and corrected the same day.</li>
+          <li>Personally designed a real, working dual-control (segregation-of-duties) process for payment authorisation.</li>
+          <li>Standout, spontaneous learning-agility evidence — mastered an unfamiliar banking system with zero training and zero handover, in the middle of a live fraud investigation.</li>
+          <li>Richest people-management evidence of any candidate assessed so far.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">
+      <strong>Operational note — not scored against her:</strong> she has a hospital appointment (a minor, non-urgent procedure) on the afternoon of Monday 14 September 2026 and cannot eat from Sunday evening beforehand. The 10:00am interview slot has been set with this in mind.
+    </div>
+  </section>
+
+  <section id="cv">
+    <h2>CV</h2>
+
+    <details open>
+      <summary>Curriculum Vitae — Holly Savage</summary>
+      <div class="doc-body"><strong>HOLLY SAVAGE</strong>
+Finance Manager | Financial &amp; Operational Leadership
+Merthyr Tydfil, South Wales · 07925 649898 · hollysavage4@icloud.com
+
+<strong>Professional Profile</strong>
+Experienced Finance Manager with 8+ years' experience across financial management, financial reporting, budgeting, forecasting, audit, credit control and business operations. Currently responsible for the finance function of a credit union while managing a team of 12 people and holding wider senior responsibilities as Head of Infrastructure, Vulnerability Member Expert and CEO deputy. Confident presenting financial information at Board level, strengthening controls, managing complex financial matters and leading teams. A practical and commercially minded finance professional with strong judgement, attention to detail and a proven ability to take ownership of financial and operational responsibilities.
+
+<strong>Key Skills</strong>
+Financial Management &amp; Management Accounts · Team Leadership &amp; People Management · Budgeting &amp; Forecasting · Board Reporting · Financial Controls &amp; Risk Management · Audit &amp; Year-End Reporting · Cash Flow &amp; Investments · Credit Control · Process Improvement · Operational Leadership · Payroll &amp; Supplier Management · Advanced Excel, Sage, Xero &amp; Power BI
+
+<strong>Professional Experience</strong>
+
+Finance Manager
+Cardiff &amp; Vale Credit Union, Cardiff | July 2024 – Present
+— Lead and manage a team of 12, overseeing performance, development, day-to-day delivery and team effectiveness.
+— Hold responsibility for the organisation's finance function, including management accounts, budgeting, forecasting, cash flow, investments, payroll, supplier payments and financial reporting.
+— Prepare and present monthly financial reports to the Board, providing clear analysis and insight to support decision-making.
+— Deputise for the CEO, providing senior leadership and operational support and representing the organisation when required.
+— Act as Head of Infrastructure, providing oversight of infrastructure-related activity and chairing the Infrastructure Group.
+— Act as the organisation's Vulnerability Member Expert, providing specialist oversight and supporting the organisation's approach to vulnerable members.
+— Chair the Credit Control User Group, bringing together relevant stakeholders to share best practice, address operational issues and drive improvements in credit control processes.
+— Led a detailed review of historic financial transactions following financial misconduct, supporting the insurance claim process and helping restore the integrity of financial records.
+— Successfully guided the organisation through external audit, strengthening financial controls and improving financial processes.
+— Lead annual year-end close and preparation of financial statements, while managing relationships with external partners, suppliers and professional advisers.
+
+Finance &amp; Credit Control Manager
+Transcend Packaging Ltd | October 2023 – July 2024
+— Managed accounts payable, credit control and supplier relationships across the business.
+— Developed reporting tools to improve visibility of aged debt and income forecasting.
+— Supported month-end reporting, reconciliations and external audit preparation.
+
+Senior Finance Officer
+NHS Wales Shared Services Partnership (NWSSP) | April 2021 – October 2023
+— Managed month-end and year-end processes, including journals, accruals and prepayments.
+— Prepared financial information, costings and forecasts for NHS departments.
+— Supported statutory financial reporting and VAT returns.
+
+Assistant Management Accountant
+Health Education and Improvement Wales (HEIW) | March 2020 – April 2021
+— Produced monthly financial reports and supported financial planning and forecasting.
+— Managed payroll reconciliations and university contract payments.
+— Maintained reconciliation systems and supported year-end processes.
+
+Earlier Finance &amp; Administration Experience
+Royal Mint / Newbridge Software | 2018 – 2020
+Finance and administration positions covering invoicing, purchase orders, account administration, client support, forecasting and operational coordination.
+
+<strong>Qualifications</strong>
+AAT Level 4 Diploma in Professional Accounting
+AAT Level 3 &amp; Level 2 – Coleg y Cymoedd
+Additional: 13 GCSEs (A*–C) · BTEC Business · BTEC Sport · AS English Language
+
+<strong>Additional Information</strong>
+Full UK Driving Licence · Own Transport · First Aid Level 3</div>
+    </details>
+  </section>
+
+  <section id="exploration">
+    <h2>Interview Guidance — Areas for Exploration</h2>
+    <div class="card">
+      <p>Suggested areas worth exploring with Holly at final interview, based on the assessment conducted through the process so far. These are intended as prompts, not prescriptions — Holly may address some of these proactively, or respond in ways that alter the picture. The assessment is yours to make.</p>
+      <table>
+        <tr><th style="width:20%;">Area</th><th style="width:40%;">Suggested to explore</th><th style="width:40%;">What to listen for</th></tr>
+        <tr>
+          <td><strong>IT &amp; systems</strong></td>
+          <td>No verified system or reporting tool beyond Excel was volunteered across either interview, and the specific IT-contract negotiation question wasn't something she'd done. Worth a direct prompt on a specific process or tool she's actually built.</td>
+          <td>A genuine, specific technical project rather than general Excel competence restated.</td>
+        </tr>
+        <tr>
+          <td><strong>People management</strong></td>
+          <td>Her competency-stage underperformance example (a team member doing minimal work) was still in progress — a meeting had been arranged but not yet held. Worth asking how it was actually resolved, or for a second, closed example.</td>
+          <td>A completed, resolved story rather than an ongoing situation.</td>
+        </tr>
+        <tr>
+          <td><strong>Autonomy — a fresh example</strong></td>
+          <td>Her "important decision alone" answer reused the same CEO-grievance investigation given at first interview. Worth asking for a different, fresh example of a solo call under pressure.</td>
+          <td>New evidence rather than the same story retold.</td>
+        </tr>
+        <tr>
+          <td><strong>Data protection — DPO readiness</strong></td>
+          <td>Not re-tested at competency stage, so this rests on one first-interview incident. Given the role carries formal DPO responsibility, worth checking whether her experience scales to full ownership.</td>
+          <td>Confidence and process knowledge beyond the one real incident she described.</td>
+        </tr>
+      </table>
+    </div>
+  </section>
+
+  <div class="footer-note">Raise + Recruit · raiseandrecruit.org.uk · john@raiseandrecruit.org.uk</div>
+
+</div>
+</body>
+</html>
